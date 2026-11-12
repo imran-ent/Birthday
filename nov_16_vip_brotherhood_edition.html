@@ -1,0 +1,2542 @@
+<!DOCTYPE html>
+<html lang="en" class="dark scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NOVEMBER 16 — VIP Brotherhood Edition</title>
+
+  <!-- Google Fonts: Playfair Display (Luxury Editorial), Plus Jakarta Sans (Clean UI), JetBrains Mono (VIP Codes & Timers) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;0,800;1,500;1,700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            serif: ['"Playfair Display"', 'Georgia', 'serif'],
+            sans: ['"Plus Jakarta Sans"', 'system-ui', 'sans-serif'],
+            mono: ['"JetBrains Mono"', 'monospace'],
+          },
+          colors: {
+            obsidian: '#09090B',
+            charcoal: '#121216',
+            gold: {
+              DEFAULT: '#E5B94C',
+              light: '#F7D774',
+              dark: '#B88A28',
+            },
+            ivory: '#F8F4EC',
+            crimson: '#E11D48',
+          },
+          boxShadow: {
+            'gold-glow': '0 0 35px rgba(229, 185, 76, 0.24)',
+            'gold-card': '0 24px 60px -15px rgba(0, 0, 0, 0.85), 0 0 28px rgba(229, 185, 76, 0.12)',
+          }
+        }
+      }
+    };
+  </script>
+
+  <!-- Baked State Injection Slot (Populated automatically when exporting standalone WhatsApp HTML) -->
+  <script>
+    window.__BAKED_STATE__ = /*__BAKED_PAYLOAD__*/null;
+  </script>
+
+  <style>
+    /* ==========================================================================
+       1. DARK-LUXURY DESIGN SYSTEM & GLASSMORPHISM TOKENS
+       ========================================================================== */
+    :root {
+      --bg-obsidian: #09090B;
+      --gold-primary: #E5B94C;
+      --gold-bright: #F7D774;
+      --gold-deep: #B88A28;
+      --glass-surface: rgba(20, 20, 25, 0.74);
+      --glass-border: rgba(229, 185, 76, 0.26);
+      --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    * {
+      box-sizing: border-box;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    html, body {
+      background-color: var(--bg-obsidian);
+      color: #F4F4F5;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      overflow-x: hidden;
+      margin: 0;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    ::selection {
+      background: rgba(229, 185, 76, 0.32);
+      color: #FFFBEB;
+    }
+
+    /* Ambient Obsidian & Brushed Champagne Spotlight Mesh */
+    .obsidian-luxury-bg {
+      background:
+        radial-gradient(ellipse 75% 45% at 50% -5%, rgba(229, 185, 76, 0.13) 0%, transparent 65%),
+        radial-gradient(ellipse 55% 40% at 90% 25%, rgba(225, 29, 72, 0.06) 0%, transparent 60%),
+        radial-gradient(ellipse 65% 45% at 10% 60%, rgba(229, 185, 76, 0.07) 0%, transparent 65%),
+        #09090B;
+    }
+
+    /* Subtle Tactile Grain Overlay */
+    .grain-overlay {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 60;
+      opacity: 0.03;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    }
+
+    /* Glassmorphism Panels */
+    .luxury-glass {
+      background: var(--glass-surface);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid var(--glass-border);
+      transition: border-color 0.35s ease, transform 0.45s var(--ease-out-expo), box-shadow 0.45s var(--ease-out-expo);
+    }
+
+    .luxury-glass-hover:hover {
+      border-color: rgba(229, 185, 76, 0.55);
+      box-shadow: 0 24px 60px -15px rgba(0, 0, 0, 0.85), 0 0 28px rgba(229, 185, 76, 0.14);
+    }
+
+    /* Gold Shimmer Text & Borders */
+    .gold-gradient-text {
+      background: linear-gradient(135deg, #FFF3C4 0%, #E5B94C 45%, #B88A28 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .btn-gold-primary {
+      background: linear-gradient(135deg, #F7D774 0%, #E5B94C 50%, #C6952B 100%);
+      color: #09090B;
+      font-weight: 700;
+      border: 1px solid rgba(255, 243, 196, 0.65);
+      box-shadow: 0 10px 30px rgba(229, 185, 76, 0.25);
+      transition: all 0.3s var(--ease-out-expo);
+    }
+    .btn-gold-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 16px 40px rgba(229, 185, 76, 0.38);
+      filter: brightness(1.05);
+    }
+    .btn-gold-primary:active {
+      transform: translateY(0);
+    }
+
+    .btn-gold-outline {
+      background: rgba(229, 185, 76, 0.08);
+      border: 1px solid rgba(229, 185, 76, 0.38);
+      color: #F4F4F5;
+      transition: all 0.3s var(--ease-out-expo);
+    }
+    .btn-gold-outline:hover {
+      background: rgba(229, 185, 76, 0.16);
+      border-color: #E5B94C;
+      transform: translateY(-1px);
+    }
+
+    /* ==========================================================================
+       2. VIP VAULT ENTRANCE OVERLAY & HOLOGRAPHIC CARD SHEEN
+       ========================================================================== */
+    #vip-vault-overlay {
+      transition: opacity 0.85s var(--ease-out-expo), transform 0.85s var(--ease-out-expo), visibility 0.85s;
+    }
+    #vip-vault-overlay.unlocked {
+      opacity: 0;
+      transform: scale(1.04);
+      visibility: hidden;
+      pointer-events: none;
+    }
+
+    @keyframes vipCardSheen {
+      0% { transform: translateX(-140%) rotate(25deg); }
+      45%, 100% { transform: translateX(240%) rotate(25deg); }
+    }
+    .vip-sheen::after {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -30%;
+      width: 45%;
+      height: 200%;
+      background: linear-gradient(90deg, transparent, rgba(255, 248, 220, 0.14), transparent);
+      animation: vipCardSheen 5.5s infinite ease-in-out;
+      pointer-events: none;
+    }
+
+    /* ==========================================================================
+       3. LUXURY CANDLE FLAME & SMOKE ANIMATIONS
+       ========================================================================== */
+    @keyframes flickerFlame {
+      0% { transform: scale(1, 1) rotate(-2deg); }
+      35% { transform: scale(1.06, 0.95) rotate(1.5deg); }
+      70% { transform: scale(0.96, 1.05) rotate(-1deg); }
+      100% { transform: scale(1.03, 0.97) rotate(2deg); }
+    }
+    .cake-flame {
+      transform-origin: 50% 90%;
+      animation: flickerFlame 1.2s ease-in-out infinite alternate;
+      transition: opacity 0.3s ease, transform 0.3s ease;
+    }
+    .cake-flame.out {
+      opacity: 0;
+      transform: scale(0.05) translateY(10px);
+      animation: none;
+    }
+
+    .smoke-trail {
+      opacity: 0;
+    }
+    .smoke-trail.active {
+      animation: smokeRise 2.6s ease-out forwards;
+    }
+    @keyframes smokeRise {
+      0% { opacity: 0; transform: translateY(0) scale(0.7); }
+      25% { opacity: 0.65; transform: translateY(-14px) translateX(4px) scale(1); }
+      100% { opacity: 0; transform: translateY(-55px) translateX(-6px) scale(1.6); }
+    }
+
+    /* ==========================================================================
+       4. LUXURY CREAM & GOLD STATIONERY LETTER
+       ========================================================================== */
+    .luxury-stationery {
+      background-color: #F8F4EC;
+      color: #18181B;
+      background-image:
+        radial-gradient(circle at 15% 15%, rgba(229, 185, 76, 0.12) 0%, transparent 50%),
+        radial-gradient(circle at 85% 85%, rgba(184, 138, 40, 0.12) 0%, transparent 55%);
+      box-shadow:
+        0 30px 90px rgba(0, 0, 0, 0.88),
+        0 0 0 1px rgba(229, 185, 76, 0.5);
+    }
+
+    .letter-reveal-drawer {
+      max-height: 0;
+      opacity: 0;
+      overflow: hidden;
+      transition: max-height 1.2s var(--ease-out-expo), opacity 0.8s ease 0.15s;
+    }
+    .letter-reveal-drawer.unsealed {
+      max-height: 3200px;
+      opacity: 1;
+    }
+
+    /* Drag-and-Drop Fullscreen Indicator */
+    body.file-dragging::after {
+      content: 'DROP ALL 9 PHOTOS ANYWHERE TO AUTO-MATCH & LOAD ⚡';
+      position: fixed;
+      inset: 16px;
+      z-index: 90;
+      background: rgba(9, 9, 11, 0.92);
+      border: 2px dashed #E5B94C;
+      border-radius: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.9rem;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      color: #E5B94C;
+      text-align: center;
+      padding: 24px;
+      pointer-events: none;
+    }
+
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar {
+      width: 7px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #09090B;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: rgba(229, 185, 76, 0.35);
+      border-radius: 9999px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #E5B94C;
+    }
+  </style>
+</head>
+<body class="obsidian-luxury-bg min-h-screen text-zinc-100">
+
+  <!-- Subtle Film Grain -->
+  <div class="grain-overlay" aria-hidden="true"></div>
+
+  <!-- Fullscreen Ambient Gold Dust + Confetti + Fireworks Canvas -->
+  <canvas id="fx-canvas" class="fixed inset-0 w-full h-full pointer-events-none z-50"></canvas>
+
+  <!-- Toast Notification Container (Replaces any browser alert/confirm) -->
+  <div id="toast-container" class="fixed bottom-5 right-5 z-[80] flex flex-col gap-2.5 max-w-sm pointer-events-none"></div>
+
+  <!-- Hidden File Inputs -->
+  <input id="batch-upload-input" type="file" multiple accept="image/*" class="hidden" />
+  <input id="single-swap-input" type="file" accept="image/*" class="hidden" />
+
+  <!-- ==========================================================================
+       SECTION 1: VIP VAULT ENTRANCE OVERLAY
+       ========================================================================== -->
+  <div id="vip-vault-overlay" class="fixed inset-0 z-40 bg-obsidian/95 backdrop-blur-2xl flex items-center justify-center p-4 sm:p-6 overflow-y-auto">
+    <div class="w-full max-w-xl my-auto">
+
+      <!-- VIP Access Card -->
+      <div class="relative overflow-hidden rounded-3xl luxury-glass vip-sheen p-6 sm:p-10 shadow-gold-card border border-gold/40">
+        <!-- Top Pass Metadata -->
+        <div class="flex flex-wrap items-center justify-between gap-2 pb-5 mb-6 border-b border-gold/20">
+          <span class="font-mono text-[11px] tracking-[0.22em] text-gold uppercase">
+            PASS NO. 016 // NOVEMBER 16 EDITION
+          </span>
+          <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-gold/10 border border-gold/30 font-mono text-[10px] text-gold-light">
+            <span class="w-1.5 h-1.5 rounded-full bg-gold animate-pulse"></span>
+            VIP ACCESS
+          </span>
+        </div>
+
+        <!-- Headline -->
+        <div class="text-center mb-7">
+          <p class="font-mono text-xs tracking-[0.25em] text-zinc-400 uppercase mb-2">
+            CLASSIFIED BROTHERHOOD ARCHIVE
+          </p>
+          <h1 class="font-serif text-3xl sm:text-5xl font-bold tracking-tight leading-tight text-white mb-3">
+            Happy Birthday, <span class="gold-gradient-text italic friend-name-display">BROTHER</span>
+          </h1>
+          <p class="text-zinc-400 text-sm sm:text-base max-w-md mx-auto">
+            Your custom November 16 vault is locked and loaded with evidence, roasts, mini-games, and one unfiltered letter.
+          </p>
+        </div>
+
+        <!-- Live Countdown to November 16 / Live Birthday Mode Banner -->
+        <div class="mb-7">
+          <div id="vault-countdown-box" class="grid grid-cols-4 gap-2.5 sm:gap-3">
+            <div class="rounded-2xl bg-black/60 border border-gold/25 p-3 text-center">
+              <div id="v-days" class="font-mono text-2xl sm:text-3xl font-bold text-white">00</div>
+              <div class="font-mono text-[10px] text-zinc-400 tracking-widest mt-1">DAYS</div>
+            </div>
+            <div class="rounded-2xl bg-black/60 border border-gold/25 p-3 text-center">
+              <div id="v-hours" class="font-mono text-2xl sm:text-3xl font-bold text-gold">00</div>
+              <div class="font-mono text-[10px] text-zinc-400 tracking-widest mt-1">HRS</div>
+            </div>
+            <div class="rounded-2xl bg-black/60 border border-gold/25 p-3 text-center">
+              <div id="v-mins" class="font-mono text-2xl sm:text-3xl font-bold text-white">00</div>
+              <div class="font-mono text-[10px] text-zinc-400 tracking-widest mt-1">MINS</div>
+            </div>
+            <div class="rounded-2xl bg-black/60 border border-gold/25 p-3 text-center">
+              <div id="v-secs" class="font-mono text-2xl sm:text-3xl font-bold text-gold-light">00</div>
+              <div class="font-mono text-[10px] text-zinc-400 tracking-widest mt-1">SECS</div>
+            </div>
+          </div>
+
+          <!-- Active on November 16 -->
+          <div id="vault-live-banner" class="hidden rounded-2xl bg-gradient-to-r from-gold/20 via-crimson/15 to-gold/20 border border-gold/50 p-4 text-center">
+            <p class="font-mono text-xs sm:text-sm font-bold tracking-[0.18em] text-gold-light">
+              🔥 IT'S NOVEMBER 16 — BIRTHDAY MODE LIVE
+            </p>
+          </div>
+        </div>
+
+        <!-- Inline Best Friend Name Input -->
+        <div class="mb-6">
+          <label for="vault-name-input" class="block font-mono text-[11px] tracking-[0.18em] text-zinc-400 uppercase mb-2">
+            PERSONALIZE FOR YOUR BRO (LIVE UPDATES EVERYWHERE)
+          </label>
+          <div class="flex gap-2">
+            <input
+              id="vault-name-input"
+              type="text"
+              maxlength="24"
+              placeholder="Type his name or nickname (default: BROTHER)"
+              class="flex-1 rounded-xl bg-black/70 border border-gold/30 focus:border-gold focus:outline-none px-4 py-3 text-sm sm:text-base font-medium text-white placeholder-zinc-500"
+            />
+            <button
+              type="button"
+              onclick="triggerBatchUpload()"
+              class="btn-gold-outline rounded-xl px-3.5 sm:px-4 py-3 font-mono text-xs font-semibold shrink-0 flex items-center gap-1.5 cursor-pointer"
+              title="Select all 9 photos from your phone/PC"
+            >
+              <span>📸</span>
+              <span class="hidden sm:inline">Photos</span>
+              <span class="photos-counter-badge text-gold">0/9</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Primary Unlock Button -->
+        <button
+          id="unlock-vault-btn"
+          type="button"
+          class="w-full btn-gold-primary rounded-2xl py-4 px-6 text-base sm:text-lg tracking-wide flex items-center justify-center gap-2.5 cursor-pointer"
+        >
+          <span>UNLOCK THE SURPRISE</span>
+          <span class="text-xl">⚡</span>
+        </button>
+
+        <!-- Bottom Pass Strip -->
+        <div class="mt-5 pt-4 border-t border-white/10 flex items-center justify-between font-mono text-[10px] text-zinc-500">
+          <span>ISSUED BY: DAY-ONE BROTHERHOOD</span>
+          <span>16 · XI · VIP</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       FLOATING TOP CONTROL BAR
+       ========================================================================== -->
+  <header class="sticky top-0 z-30 bg-obsidian/85 backdrop-blur-xl border-b border-gold/20">
+    <div class="max-w-7xl mx-auto px-3 sm:px-6 h-16 flex items-center justify-between gap-2">
+      <!-- Brand Logo -->
+      <a href="#hero" class="flex items-center gap-2.5 shrink-0">
+        <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-gold-light to-gold-dark text-obsidian font-serif font-extrabold text-sm flex items-center justify-center shadow">
+          16
+        </div>
+        <div class="hidden sm:block">
+          <div class="font-serif font-bold text-sm tracking-wide text-white leading-none">NOV 16 VIP</div>
+          <div class="font-mono text-[10px] text-gold tracking-widest mt-0.5">BROTHERHOOD</div>
+        </div>
+      </a>
+
+      <!-- Center Quick Nav (Desktop) -->
+      <nav class="hidden lg:flex items-center gap-6 font-mono text-xs text-zinc-400">
+        <a href="#hero" class="hover:text-gold transition-colors">SPOTLIGHT</a>
+        <a href="#vault-gallery" class="hover:text-gold transition-colors">9-PHOTO VAULT</a>
+        <a href="#bro-fun-zone" class="hover:text-gold transition-colors">BRO CLUB GAMES</a>
+        <a href="#brotherhood-letter" class="hover:text-gold transition-colors">THE LETTER</a>
+      </nav>
+
+      <!-- Right Action Controls -->
+      <div class="flex items-center gap-1.5 sm:gap-2.5">
+        <!-- Quick Edit Name Pill -->
+        <button
+          id="top-edit-name-btn"
+          type="button"
+          class="btn-gold-outline rounded-xl px-2.5 sm:px-3 py-2 font-mono text-[11px] flex items-center gap-1.5 cursor-pointer"
+          title="Edit Best Friend's Name"
+        >
+          <span>✏️</span>
+          <span class="friend-name-display max-w-[85px] sm:max-w-[120px] truncate text-gold-light font-semibold">BROTHER</span>
+        </button>
+
+        <!-- Photo Sync Counter Button -->
+        <button
+          type="button"
+          onclick="triggerBatchUpload()"
+          class="btn-gold-outline rounded-xl px-2.5 sm:px-3.5 py-2 font-mono text-[11px] flex items-center gap-1.5 cursor-pointer"
+          title="Load or auto-match all 9 photos"
+        >
+          <span>📸</span>
+          <span class="hidden md:inline">Photos:</span>
+          <span class="photos-counter-badge text-gold font-bold">0/9</span>
+        </button>
+
+        <!-- Fireworks / Confetti Trigger -->
+        <button
+          id="top-celebrate-btn"
+          type="button"
+          class="btn-gold-outline rounded-xl p-2 sm:px-3 sm:py-2 font-mono text-xs flex items-center gap-1 cursor-pointer"
+          title="Launch Gold Fireworks & Confetti"
+        >
+          <span>🎆</span>
+          <span class="hidden xl:inline">Celebrate</span>
+        </button>
+
+        <!-- Sound FX Toggle -->
+        <button
+          id="top-sound-btn"
+          type="button"
+          class="btn-gold-outline rounded-xl w-9 h-9 flex items-center justify-center text-sm cursor-pointer"
+          title="Toggle Sound Effects"
+        >
+          🔊
+        </button>
+
+        <!-- Download Ready-to-Send Standalone WhatsApp File -->
+        <button
+          id="export-whatsapp-btn"
+          type="button"
+          class="btn-gold-primary rounded-xl px-3 sm:px-4 py-2 font-mono text-[11px] flex items-center gap-1.5 cursor-pointer shrink-0"
+          title="Download standalone HTML file with all loaded photos & custom text baked in for WhatsApp"
+        >
+          <span>📦</span>
+          <span class="hidden sm:inline">Download File</span>
+          <span class="sm:hidden">Save</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Inline Name Quick-Edit Bar (Toggles open when clicking ✏️ Name pill) -->
+  <div id="inline-name-drawer" class="hidden bg-charcoal border-b border-gold/30 py-3 px-4">
+    <div class="max-w-3xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-3">
+      <span class="font-mono text-xs text-gold">EDIT HIS NAME / NICKNAME:</span>
+      <div class="flex w-full sm:w-auto gap-2">
+        <input
+          id="top-name-input"
+          type="text"
+          maxlength="24"
+          placeholder="Enter name..."
+          class="flex-1 sm:w-64 rounded-xl bg-obsidian border border-gold/40 px-3.5 py-2 text-sm text-white focus:outline-none focus:border-gold"
+        />
+        <button id="save-top-name-btn" type="button" class="btn-gold-primary rounded-xl px-4 py-2 font-mono text-xs cursor-pointer">
+          Apply
+        </button>
+        <button id="close-top-name-btn" type="button" class="btn-gold-outline rounded-xl px-3 py-2 font-mono text-xs cursor-pointer">
+          ✕
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       MAIN CONTENT FLOW
+       ========================================================================== -->
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 sm:pt-14 pb-24 space-y-24 sm:space-y-32">
+
+    <!-- ========================================================================
+         SECTION 2: HERO SPOTLIGHT & LUXURY BRO STATS
+         ======================================================================== -->
+    <section id="hero" class="space-y-10">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
+
+        <!-- Left Kinetic Editorial Column (7 Cols) -->
+        <div class="lg:col-span-7 space-y-6">
+          <div class="inline-flex flex-wrap items-center gap-2.5 px-3.5 py-1.5 rounded-full luxury-glass border border-gold/35">
+            <span class="font-mono text-xs text-gold font-semibold">16 NOVEMBER</span>
+            <span class="text-zinc-600">//</span>
+            <span class="font-mono text-xs text-zinc-300 uppercase">OFFICIAL TRIBUTE TO <span class="text-gold-light font-bold friend-name-display">BROTHER</span></span>
+          </div>
+
+          <h2 class="font-serif text-4xl sm:text-6xl xl:text-7xl font-extrabold tracking-tight leading-[1.04] text-white">
+            NOVEMBER 16 —<br />
+            <span class="gold-gradient-text italic">THE LEGEND'S DAY.</span>
+          </h2>
+
+          <p class="text-zinc-300 text-base sm:text-lg max-w-2xl leading-relaxed">
+            Not just another birthday—it's the annual celebration of the guy who makes every boring function bearable, turns random bike rides into core memories, and stays a <span class="text-gold-light font-semibold">real brother</span> through every high and low. Happy Birthday, <span class="text-white font-semibold friend-name-display">BROTHER</span>!
+          </p>
+
+          <!-- Prominent Photo Sync & Drag-and-Drop Bar -->
+          <div
+            id="hero-dropzone"
+            onclick="triggerBatchUpload()"
+            class="rounded-2xl luxury-glass border-2 border-dashed border-gold/40 hover:border-gold p-4 sm:p-5 cursor-pointer group transition-all"
+          >
+            <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+              <div class="flex items-center gap-3.5">
+                <div class="w-12 h-12 rounded-xl bg-gold/15 border border-gold/40 flex items-center justify-center text-2xl shrink-0 group-hover:scale-105 transition-transform">
+                  📸
+                </div>
+                <div>
+                  <div class="font-semibold text-sm sm:text-base text-white group-hover:text-gold-light transition-colors">
+                    Load All 9 Photos (Auto-Match)
+                  </div>
+                  <p class="text-xs text-zinc-400 mt-0.5">
+                    Click to select all 9 images at once—or drag &amp; drop them anywhere on this page.
+                  </p>
+                </div>
+              </div>
+              <div class="flex items-center gap-2 self-end sm:self-center shrink-0">
+                <span class="font-mono text-xs px-3 py-1.5 rounded-lg bg-black/60 border border-gold/30 text-gold">
+                  Synced: <strong class="photos-counter-badge">0/9</strong>
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <!-- CTA Buttons -->
+          <div class="flex flex-wrap items-center gap-3.5 pt-1">
+            <a href="#vault-gallery" class="btn-gold-primary rounded-xl px-6 py-3.5 text-sm sm:text-base inline-flex items-center gap-2">
+              <span>Inspect the 9-Photo Vault</span>
+              <span>🔥</span>
+            </a>
+            <a href="#bro-fun-zone" class="btn-gold-outline rounded-xl px-6 py-3.5 text-sm sm:text-base inline-flex items-center gap-2">
+              <span>Enter Bro Club Games</span>
+              <span>🎰</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Right 3D Pointer-Tilting Luxury Gold Portrait Showcase (5 Cols) -->
+        <div class="lg:col-span-5 flex flex-col items-center">
+          <div id="hero-tilt-stage" class="w-full max-w-[420px] [perspective:1200px]">
+            <div
+              id="hero-tilt-card"
+              class="rounded-3xl luxury-glass p-4 sm:p-5 border border-gold/45 shadow-gold-card transition-transform duration-200 ease-out"
+            >
+              <!-- Card Top Header -->
+              <div class="flex items-center justify-between mb-3">
+                <span id="hero-plate-tag" class="font-mono text-[11px] text-gold font-semibold tracking-wider">
+                  SPOTLIGHT // #02
+                </span>
+                <span class="font-mono text-[10px] px-2.5 py-0.5 rounded-full bg-gold/15 text-gold-light border border-gold/30">
+                  NOV 16 VIP
+                </span>
+              </div>
+
+              <!-- Portrait Frame (Defaults to Photo #2: Hill Road Peace Sign) -->
+              <div
+                id="hero-portrait-frame"
+                onclick="openLightbox(heroFeaturedIndex)"
+                class="relative aspect-[3/4] w-full rounded-2xl overflow-hidden bg-zinc-950 border border-gold/30 cursor-pointer group"
+              >
+                <img
+                  id="hero-featured-img"
+                  src=""
+                  alt="Featured Brother Portrait"
+                  class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                />
+                <!-- Custom SVG VIP Archival Plate Fallback -->
+                <div id="hero-featured-fallback" class="hidden absolute inset-0"></div>
+
+                <!-- Hover Badge -->
+                <div class="absolute bottom-3 left-3 right-3 rounded-xl bg-obsidian/85 backdrop-blur-md border border-gold/30 p-3 flex items-center justify-between">
+                  <div class="min-w-0 pr-2">
+                    <div id="hero-featured-title" class="font-serif font-bold text-base text-white truncate">
+                      Main Character on the Ghat Road
+                    </div>
+                    <div id="hero-featured-sub" class="font-mono text-[10px] text-gold truncate">
+                      CLICK TO OPEN LIGHTBOX
+                    </div>
+                  </div>
+                  <span class="text-gold text-sm shrink-0">↗</span>
+                </div>
+              </div>
+
+              <!-- Quick Selector Pills (#1 - #9) -->
+              <div class="mt-4 pt-3 border-t border-white/10">
+                <div class="flex items-center justify-between mb-2">
+                  <span class="font-mono text-[10px] text-zinc-400 tracking-wider">SWITCH SPOTLIGHT PLATE:</span>
+                  <button
+                    type="button"
+                    onclick="triggerSingleSwap(heroFeaturedIndex)"
+                    class="font-mono text-[10px] text-gold hover:underline cursor-pointer"
+                  >
+                    Swap Photo
+                  </button>
+                </div>
+                <div id="hero-selector-pills" class="grid grid-cols-9 gap-1.5">
+                  <!-- Generated via JS (#1 to #9) -->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Animated Luxury Bro Stats Strip -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        <div class="rounded-2xl luxury-glass luxury-glass-hover p-5 border border-gold/25">
+          <div class="font-mono text-3xl sm:text-4xl font-bold gold-gradient-text">100%</div>
+          <div class="font-semibold text-white text-sm mt-2">Day-One Loyalty</div>
+          <p class="text-xs text-zinc-400 mt-1">Zero fake energy since the very first hangout.</p>
+        </div>
+
+        <div class="rounded-2xl luxury-glass luxury-glass-hover p-5 border border-gold/25">
+          <div class="font-mono text-3xl sm:text-4xl font-bold text-crimson">0%</div>
+          <div class="font-semibold text-white text-sm mt-2">Interest in Family Gatherings</div>
+          <p class="text-xs text-zinc-400 mt-1">Photographic evidence #5 officially verified.</p>
+        </div>
+
+        <div class="rounded-2xl luxury-glass luxury-glass-hover p-5 border border-gold/25">
+          <div class="font-mono text-3xl sm:text-4xl font-bold gold-gradient-text">∞</div>
+          <div class="font-semibold text-white text-sm mt-2">Late-Night Overthinking Sessions</div>
+          <p class="text-xs text-zinc-400 mt-1">3 AM Spotify + backlit laptop mode activated.</p>
+        </div>
+
+        <div class="rounded-2xl luxury-glass luxury-glass-hover p-5 border border-gold/25">
+          <div class="font-mono text-3xl sm:text-4xl font-bold text-gold-light">16 NOV</div>
+          <div class="font-semibold text-white text-sm mt-2">Official Main Character</div>
+          <p class="text-xs text-zinc-400 mt-1">Certified legend status unlocked for life.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================
+         SECTION 3: THE 9-CARD "EVIDENCE & ROAST VAULT" (INTERACTIVE GALLERY)
+         ======================================================================== -->
+    <section id="vault-gallery" class="space-y-8">
+      <!-- Section Header & Category Filter Pills -->
+      <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-6">
+        <div>
+          <span class="font-mono text-xs tracking-[0.22em] text-gold uppercase">EXHIBIT 01 // PHOTOGRAPHIC EVIDENCE</span>
+          <h2 class="font-serif text-3xl sm:text-5xl font-bold text-white mt-2">
+            The 9-Card <span class="gold-gradient-text italic">Evidence &amp; Roast Vault</span>
+          </h2>
+          <p class="text-zinc-400 text-sm sm:text-base mt-2 max-w-2xl">
+            Every legendary frame in one vault. Toggle between <span class="text-gold-light font-semibold">🔥 Hype</span> and <span class="text-rose-400 font-semibold">💀 Roast</span> directly on any card, or click a photo to inspect it full-screen.
+          </p>
+        </div>
+
+        <!-- Category Filters -->
+        <div id="gallery-filter-bar" class="flex flex-wrap gap-2">
+          <button data-filter="all" class="gallery-filter-btn active btn-gold-primary rounded-xl px-4 py-2.5 font-mono text-xs cursor-pointer">
+            All 9
+          </button>
+          <button data-filter="iconic" class="gallery-filter-btn btn-gold-outline rounded-xl px-4 py-2.5 font-mono text-xs cursor-pointer">
+            Iconic Looks
+          </button>
+          <button data-filter="candid" class="gallery-filter-btn btn-gold-outline rounded-xl px-4 py-2.5 font-mono text-xs cursor-pointer">
+            Candid Madness
+          </button>
+          <button data-filter="moody" class="gallery-filter-btn btn-gold-outline rounded-xl px-4 py-2.5 font-mono text-xs cursor-pointer">
+            Moody Aesthetics
+          </button>
+        </div>
+      </div>
+
+      <!-- 9-Card Responsive Luxury Masonry / Grid -->
+      <div id="evidence-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-7">
+        <!-- Rendered dynamically by JS for all 9 cards -->
+      </div>
+    </section>
+
+    <!-- ========================================================================
+         SECTION 4: INTERACTIVE "BRO CLUB" FUN ZONE
+         ======================================================================== -->
+    <section id="bro-fun-zone" class="space-y-10">
+      <div class="text-center max-w-2xl mx-auto">
+        <span class="font-mono text-xs tracking-[0.22em] text-gold uppercase">EXHIBIT 02 // INTERACTIVE LOUNGE</span>
+        <h2 class="font-serif text-3xl sm:text-5xl font-bold text-white mt-2">
+          The <span class="gold-gradient-text italic">Bro Club</span> Fun Zone
+        </h2>
+        <p class="text-zinc-400 text-sm sm:text-base mt-2">
+          Claim your official November 16 birthday perks, pass the brotherhood vibe check, and blow out the midnight candles.
+        </p>
+      </div>
+
+      <!-- Top Row: Roulette Wheel (Left) + Brotherhood Vibe Check Quiz (Right) -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-7 items-stretch">
+
+        <!-- 1. Spin Your Nov 16 Birthday Perk (Luxury Gold Roulette Wheel) -->
+        <div class="lg:col-span-6 rounded-3xl luxury-glass p-6 sm:p-8 border border-gold/30 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-2">
+              <span class="font-mono text-xs text-gold tracking-wider">VIP ROULETTE // 01</span>
+              <span class="font-mono text-[10px] px-2.5 py-0.5 rounded-full bg-gold/15 text-gold-light">100% REDEEMABLE</span>
+            </div>
+            <h3 class="font-serif text-2xl sm:text-3xl font-bold text-white">
+              Spin Your Nov 16 Birthday Perk
+            </h3>
+            <p class="text-zinc-400 text-xs sm:text-sm mt-1">
+              Whatever the gold pointer lands on, I legally owe you—no excuses.
+            </p>
+          </div>
+
+          <!-- Roulette Wheel Stage -->
+          <div class="relative my-6 mx-auto w-64 h-64 sm:w-72 sm:h-72 flex items-center justify-center">
+            <!-- Top Gold Pointer Pin -->
+            <div class="absolute -top-3 left-1/2 -translate-x-1/2 z-20 drop-shadow-[0_4px_10px_rgba(229,185,76,0.7)]">
+              <svg width="28" height="32" viewBox="0 0 28 32">
+                <polygon points="14,30 2,4 26,4" fill="#F7D774" stroke="#09090B" stroke-width="2" />
+              </svg>
+            </div>
+
+            <!-- Rotating Canvas Wheel -->
+            <canvas id="roulette-canvas" width="320" height="320" class="w-full h-full rounded-full shadow-[0_0_40px_rgba(229,185,76,0.2)] border-2 border-gold/60"></canvas>
+
+            <!-- Center Spin Hub Button -->
+            <button
+              id="spin-wheel-btn"
+              type="button"
+              class="absolute w-16 h-16 rounded-full btn-gold-primary font-mono text-xs font-extrabold tracking-wider flex items-center justify-center shadow-xl cursor-pointer z-10"
+            >
+              SPIN
+            </button>
+          </div>
+
+          <!-- Won Perk Voucher Card -->
+          <div id="roulette-result-box" class="rounded-2xl bg-black/65 border border-gold/30 p-4 text-center">
+            <div class="font-mono text-[10px] text-zinc-400 tracking-widest uppercase">CURRENT VOUCHER STATUS</div>
+            <div id="roulette-prize-text" class="font-serif text-lg sm:text-xl font-bold text-gold-light mt-1">
+              Tap SPIN to unlock your Birthday Voucher!
+            </div>
+          </div>
+        </div>
+
+        <!-- 2. The Brotherhood Vibe Check (3-Question Interactive Mini-Quiz) -->
+        <div class="lg:col-span-6 rounded-3xl luxury-glass p-6 sm:p-8 border border-gold/30 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-2">
+              <span class="font-mono text-xs text-gold tracking-wider">VIBE CHECK // 02</span>
+              <span id="quiz-progress-pill" class="font-mono text-[11px] px-2.5 py-0.5 rounded-full bg-white/10 text-zinc-300">
+                QUESTION 1 / 3
+              </span>
+            </div>
+            <h3 class="font-serif text-2xl sm:text-3xl font-bold text-white">
+              The Brotherhood Vibe Check
+            </h3>
+            <p class="text-zinc-400 text-xs sm:text-sm mt-1">
+              Three rapid-fire questions based strictly on your photographic record.
+            </p>
+          </div>
+
+          <!-- Quiz Body -->
+          <div id="quiz-stage" class="my-6 space-y-4">
+            <div class="rounded-2xl bg-black/60 border border-white/10 p-4 sm:p-5">
+              <p id="quiz-question-text" class="font-semibold text-base sm:text-lg text-white leading-snug">
+                Loading question...
+              </p>
+            </div>
+
+            <div id="quiz-options-list" class="space-y-2.5">
+              <!-- Options rendered via JS -->
+            </div>
+
+            <div id="quiz-feedback-banner" class="hidden rounded-xl p-3.5 text-xs sm:text-sm border"></div>
+          </div>
+
+          <!-- Quiz Footer Controls -->
+          <div class="flex items-center justify-between pt-3 border-t border-white/10">
+            <span id="quiz-score-label" class="font-mono text-xs text-gold">SCORE: 0 / 3</span>
+            <button
+              id="quiz-next-btn"
+              type="button"
+              class="hidden btn-gold-primary rounded-xl px-5 py-2.5 font-mono text-xs cursor-pointer"
+            >
+              Next Question →
+            </button>
+            <button
+              id="quiz-restart-btn"
+              type="button"
+              class="hidden btn-gold-outline rounded-xl px-4 py-2 font-mono text-xs cursor-pointer"
+            >
+              Play Again ↻
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3. The Midnight Nov 16 Cake Ritual (Full-Width Luxury Showcase) -->
+      <div class="rounded-3xl luxury-glass p-6 sm:p-10 border border-gold/40 text-center relative overflow-hidden">
+        <div class="max-w-2xl mx-auto relative z-10">
+          <span class="font-mono text-xs tracking-[0.22em] text-gold uppercase">MIDNIGHT RITUAL // NOVEMBER 16</span>
+          <h3 class="font-serif text-3xl sm:text-4xl font-bold text-white mt-2">
+            Make a Wish &amp; <span class="gold-gradient-text italic">Blow Out the Candles</span>
+          </h3>
+          <p class="text-zinc-400 text-sm sm:text-base mt-2">
+            Close your eyes, make a big wish for the year ahead, and extinguish the flames to launch the fireworks finale and unseal your personal letter.
+          </p>
+
+          <!-- Obsidian & Brushed Gold Tiered Digital Cake SVG -->
+          <div class="my-8 mx-auto w-64 sm:w-72 select-none">
+            <svg viewBox="0 0 300 260" class="w-full h-auto overflow-visible">
+              <defs>
+                <linearGradient id="goldTierGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                  <stop offset="0%" stop-color="#B88A28" />
+                  <stop offset="50%" stop-color="#F7D774" />
+                  <stop offset="100%" stop-color="#B88A28" />
+                </linearGradient>
+                <linearGradient id="obsidianCakeGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                  <stop offset="0%" stop-color="#09090B" />
+                  <stop offset="40%" stop-color="#1E1E24" />
+                  <stop offset="100%" stop-color="#09090B" />
+                </linearGradient>
+                <radialGradient id="flameGlow" cx="50%" cy="65%" r="55%">
+                  <stop offset="0%" stop-color="#FFFFFF" />
+                  <stop offset="45%" stop-color="#FDE047" />
+                  <stop offset="80%" stop-color="#F59E0B" />
+                  <stop offset="100%" stop-color="rgba(245,158,11,0)" />
+                </radialGradient>
+              </defs>
+
+              <!-- Smoke Trails (Shown when blown out) -->
+              <path class="smoke-trail" d="M105 64 Q98 46 108 30 T102 6" fill="none" stroke="rgba(244,244,245,0.5)" stroke-width="2" stroke-linecap="round" />
+              <path class="smoke-trail" style="animation-delay:0.15s" d="M150 58 Q158 40 146 24 T154 2" fill="none" stroke="rgba(229,185,76,0.55)" stroke-width="2" stroke-linecap="round" />
+              <path class="smoke-trail" style="animation-delay:0.3s" d="M195 64 Q188 46 198 30 T192 6" fill="none" stroke="rgba(244,244,245,0.5)" stroke-width="2" stroke-linecap="round" />
+
+              <!-- 3 Golden Candles -->
+              <!-- Left Candle -->
+              <rect x="100" y="68" width="10" height="36" rx="3" fill="url(#goldTierGrad)" />
+              <line x1="105" y1="62" x2="105" y2="68" stroke="#52525B" stroke-width="2" />
+              <path class="cake-flame" d="M105 34 C114 48 114 58 105 63 C96 58 96 48 105 34 Z" fill="url(#flameGlow)" />
+
+              <!-- Center Tall Candle -->
+              <rect x="145" y="60" width="10" height="44" rx="3" fill="url(#goldTierGrad)" />
+              <line x1="150" y1="54" x2="150" y2="60" stroke="#52525B" stroke-width="2" />
+              <path class="cake-flame" style="animation-delay:0.2s" d="M150 24 C160 40 160 51 150 56 C140 51 140 40 150 24 Z" fill="url(#flameGlow)" />
+
+              <!-- Right Candle -->
+              <rect x="190" y="68" width="10" height="36" rx="3" fill="url(#goldTierGrad)" />
+              <line x1="195" y1="62" x2="195" y2="68" stroke="#52525B" stroke-width="2" />
+              <path class="cake-flame" style="animation-delay:0.4s" d="M195 34 C204 48 204 58 195 63 C186 58 186 48 195 34 Z" fill="url(#flameGlow)" />
+
+              <!-- Top Tier (Obsidian & Gold Trim) -->
+              <rect x="75" y="104" width="150" height="52" rx="12" fill="url(#obsidianCakeGrad)" stroke="#E5B94C" stroke-width="1.5" />
+              <path d="M75 118 Q94 128 112 118 T150 118 T188 118 T225 118" fill="none" stroke="#F7D774" stroke-width="2.5" />
+              <text x="150" y="143" text-anchor="middle" fill="#F7D774" font-family="'JetBrains Mono', monospace" font-size="12" font-weight="700" letter-spacing="3">16 NOV</text>
+
+              <!-- Bottom Tier -->
+              <rect x="45" y="156" width="210" height="64" rx="14" fill="url(#obsidianCakeGrad)" stroke="#E5B94C" stroke-width="1.5" />
+              <rect x="45" y="178" width="210" height="8" fill="url(#goldTierGrad)" opacity="0.85" />
+              <text x="150" y="206" text-anchor="middle" fill="#E4E4E7" font-family="'Playfair Display', serif" font-size="14" font-weight="700" letter-spacing="2">VIP EDITION</text>
+
+              <!-- Luxury Gold Cake Platter -->
+              <rect x="22" y="220" width="256" height="10" rx="5" fill="url(#goldTierGrad)" />
+              <polygon points="110,230 190,230 205,246 95,246" fill="#18181B" stroke="#E5B94C" stroke-width="1.2" />
+            </svg>
+          </div>
+
+          <!-- Candle Controls -->
+          <div class="flex flex-wrap items-center justify-center gap-3">
+            <button
+              id="blow-candles-btn"
+              type="button"
+              class="btn-gold-primary rounded-xl px-7 py-3.5 text-sm sm:text-base cursor-pointer"
+            >
+              Blow Out Candles 🎂
+            </button>
+            <button
+              id="mic-candles-btn"
+              type="button"
+              class="btn-gold-outline rounded-xl px-5 py-3.5 font-mono text-xs cursor-pointer"
+            >
+              🎙️ Blow Into Mic
+            </button>
+            <button
+              id="relight-candles-btn"
+              type="button"
+              class="hidden btn-gold-outline rounded-xl px-5 py-3.5 font-mono text-xs cursor-pointer"
+            >
+              Relight Candles 🔥
+            </button>
+          </div>
+
+          <p id="cake-status-msg" class="font-mono text-xs text-gold mt-4">
+            CANDLES LIT // MAKE YOUR NOVEMBER 16 WISH
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================
+         SECTION 5: THE EMOTIONAL BROTHERHOOD LETTER (LUXURY CREAM & GOLD STATIONERY)
+         ======================================================================== -->
+    <section id="brotherhood-letter" class="max-w-4xl mx-auto space-y-8">
+      <div class="text-center">
+        <span class="font-mono text-xs tracking-[0.22em] text-gold uppercase">EXHIBIT 03 // STRAIGHT FROM THE HEART</span>
+        <h2 class="font-serif text-3xl sm:text-5xl font-bold text-white mt-2">
+          The <span class="gold-gradient-text italic">Brotherhood</span> Letter
+        </h2>
+      </div>
+
+      <!-- Luxury Cream & Gold Stationery Card (#F8F4EC) -->
+      <article class="luxury-stationery rounded-3xl p-5 sm:p-10 md:p-12 relative overflow-hidden">
+        <!-- Gold Foil Inner Frame -->
+        <div class="border-2 border-gold-dark/45 rounded-2xl p-6 sm:p-10 md:p-12 relative">
+
+          <!-- Stationery Header -->
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-6 mb-7 border-b border-zinc-900/15">
+            <div>
+              <span class="font-mono text-[11px] tracking-[0.2em] text-gold-dark font-bold uppercase">
+                NOVEMBER 16 // PERSONAL DISPATCH
+              </span>
+              <h3 class="font-serif text-2xl sm:text-3xl font-bold text-zinc-900 mt-1">
+                To <span class="friend-name-display">BROTHER</span>,
+              </h3>
+            </div>
+
+            <!-- Customize Letter Toggle Button -->
+            <button
+              id="toggle-edit-letter-btn"
+              type="button"
+              class="self-start sm:self-center px-4 py-2 rounded-xl bg-zinc-900 text-gold-light hover:bg-zinc-800 font-mono text-xs font-semibold flex items-center gap-1.5 transition-colors cursor-pointer"
+            >
+              <span>✍️</span>
+              <span id="edit-letter-label">Customize Letter</span>
+            </button>
+          </div>
+
+          <!-- Sealed Wax Stamp Prompt (Before Unsealing) -->
+          <div id="letter-wax-seal-box" class="py-10 text-center space-y-5">
+            <button
+              id="unseal-letter-btn"
+              type="button"
+              class="w-24 h-24 mx-auto rounded-full bg-gradient-to-br from-rose-700 via-red-800 to-rose-950 border-4 border-gold shadow-xl flex flex-col items-center justify-center text-gold-light hover:scale-105 transition-transform cursor-pointer"
+            >
+              <span class="font-serif font-extrabold text-2xl leading-none">XVI</span>
+              <span class="font-mono text-[9px] tracking-widest mt-1">TAP SEAL</span>
+            </button>
+            <div>
+              <p class="font-serif italic text-2xl text-zinc-900 font-semibold">
+                Sealed with Day-One Brotherhood
+              </p>
+              <p class="text-xs sm:text-sm text-zinc-600 max-w-md mx-auto mt-1">
+                Blow out the birthday candles above or tap the crimson &amp; gold wax seal to break open your letter.
+              </p>
+            </div>
+          </div>
+
+          <!-- Unsealed Letter Content (Editable when Customize Letter is active) -->
+          <div id="letter-body-drawer" class="letter-reveal-drawer">
+            <div
+              id="editable-letter-content"
+              class="space-y-5 text-zinc-800 text-base sm:text-lg leading-[1.8] font-normal focus:outline-none rounded-xl transition-all"
+            >
+              <p class="font-serif text-xl sm:text-2xl font-bold text-zinc-950">
+                Happy Birthday, my brother.
+              </p>
+
+              <p>
+                I wanted to build something way louder and more permanent than a lazy "HBD bro" text at midnight—because real ones like you don't come around twice in a lifetime. Looking at all these photos of us—whether you're making that legendary deadpan face trying to survive a boring family gathering, dodging the camera like you're dodging paparazzi, cruising down ghat roads in a crisp white shirt, or locked into your laptop with Spotify blasting at 3 AM—I realized how many of my best days only happened because you were there.
+              </p>
+
+              <p>
+                People throw the word "brother" around way too easily, so let me be dead honest with you: we aren't brothers by blood, we're brothers by choice, and I wouldn't trade that for anything. You have this rare, grounded loyalty where you don't need to make big speeches to prove you care—you just show up. When life gets heavy, when plans fall apart, or when I just need someone who gets the joke without explaining it, you're already in my corner.
+              </p>
+
+              <p>
+                Yes, I will roast you relentlessly for blurry hill sprints, dramatic black-and-white selfies, and staring at your phone at the canteen table like a stressed-out CEO. That's literally in my job description as your best friend. But behind every single joke is massive respect for the person you are, the resilience you carry quietly, and the way you stay 100% real in a world full of fake people.
+              </p>
+
+              <p>
+                As November 16 kicks off a brand new chapter for you, here is my real wish for you: may every silent goal you're grinding toward right now pay off bigger than you imagined. May your mind stay sharp, your peace stay unbothered, your plate always stay full, and your circle stay solid.
+              </p>
+
+              <p class="font-serif italic text-xl text-zinc-950 font-semibold">
+                No matter where life takes us next, you've got a day-one brother for life. Enjoy every second of today—the treat is officially on me!
+              </p>
+            </div>
+
+            <!-- Letter Footer & Signature -->
+            <div class="mt-10 pt-6 border-t border-zinc-900/15 flex flex-col sm:flex-row sm:items-end justify-between gap-6">
+              <div>
+                <div class="font-mono text-[10px] tracking-widest text-zinc-500 uppercase">ALWAYS GOT YOUR BACK,</div>
+                <div
+                  id="editable-sender-sign"
+                  class="font-serif italic text-2xl sm:text-3xl font-bold text-zinc-900 mt-1 focus:outline-none rounded px-1"
+                >
+                  Your Day-One Brother
+                </div>
+              </div>
+
+              <div class="flex flex-wrap gap-2.5">
+                <button
+                  type="button"
+                  onclick="launchCelebrationBurst()"
+                  class="px-5 py-3 rounded-xl bg-zinc-900 text-gold-light hover:bg-zinc-800 font-mono text-xs font-semibold cursor-pointer"
+                >
+                  🎆 Fire Celebration
+                </button>
+                <button
+                  type="button"
+                  onclick="exportReadyToSendHTML()"
+                  class="btn-gold-primary rounded-xl px-5 py-3 font-mono text-xs cursor-pointer"
+                >
+                  📦 Save for WhatsApp
+                </button>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </article>
+    </section>
+
+  </main>
+
+  <!-- ==========================================================================
+       FOOTER
+       ========================================================================== -->
+  <footer class="border-t border-gold/20 bg-black/70 py-8 px-4 text-center">
+    <p class="font-mono text-xs text-zinc-400">
+      NOVEMBER 16 VIP EDITION // BUILT FOR <span class="text-gold friend-name-display">BROTHER</span>
+    </p>
+  </footer>
+
+  <!-- ==========================================================================
+       FULL-SCREEN VIP LIGHTBOX MODAL
+       ========================================================================== -->
+  <div id="vip-lightbox" class="fixed inset-0 z-50 hidden items-center justify-center p-3 sm:p-6 bg-black/95 backdrop-blur-2xl">
+    <div class="relative w-full max-w-5xl rounded-3xl luxury-glass border border-gold/40 grid grid-cols-1 lg:grid-cols-12 max-h-[92vh] overflow-hidden shadow-gold-card">
+
+      <!-- Close Button -->
+      <button
+        id="close-lightbox-btn"
+        type="button"
+        class="absolute top-4 right-4 z-20 w-10 h-10 rounded-full bg-black/80 border border-gold/40 text-white hover:text-gold flex items-center justify-center font-mono text-sm cursor-pointer"
+      >
+        ✕
+      </button>
+
+      <!-- Left Image Stage (7 Cols) -->
+      <div class="lg:col-span-7 relative bg-zinc-950 flex items-center justify-center min-h-[280px] sm:min-h-[440px] max-h-[52vh] lg:max-h-[88vh] p-4 sm:p-6 border-b lg:border-b-0 lg:border-r border-gold/20">
+        <img id="lb-img" src="" alt="Evidence Photo" class="max-w-full max-h-full object-contain rounded-xl" />
+        <div id="lb-fallback" class="hidden w-full max-w-sm aspect-[3/4]"></div>
+
+        <!-- Prev / Next Arrows -->
+        <button
+          id="lb-prev-btn"
+          type="button"
+          class="absolute left-3 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-black/80 border border-gold/40 text-white hover:text-gold flex items-center justify-center cursor-pointer"
+        >
+          ←
+        </button>
+        <button
+          id="lb-next-btn"
+          type="button"
+          class="absolute right-3 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-black/80 border border-gold/40 text-white hover:text-gold flex items-center justify-center cursor-pointer"
+        >
+          →
+        </button>
+      </div>
+
+      <!-- Right Hype / Roast Details (5 Cols) -->
+      <div class="lg:col-span-5 p-6 sm:p-8 flex flex-col justify-between overflow-y-auto bg-charcoal">
+        <div class="space-y-5">
+          <div>
+            <span id="lb-plate-code" class="font-mono text-xs text-gold tracking-widest">EVIDENCE #01 OF 09</span>
+            <h3 id="lb-title" class="font-serif text-2xl sm:text-3xl font-bold text-white mt-1">
+              Title
+            </h3>
+            <p id="lb-scene-tag" class="font-mono text-[11px] text-zinc-400 mt-1">
+              SCENE TAG
+            </p>
+          </div>
+
+          <!-- Hype vs Roast Segmented Switch -->
+          <div class="grid grid-cols-2 rounded-xl bg-black/70 p-1 border border-gold/25">
+            <button
+              id="lb-hype-tab"
+              type="button"
+              class="py-2.5 rounded-lg font-mono text-xs font-bold bg-gold text-obsidian transition-all cursor-pointer"
+            >
+              🔥 Hype
+            </button>
+            <button
+              id="lb-roast-tab"
+              type="button"
+              class="py-2.5 rounded-lg font-mono text-xs font-bold text-zinc-400 hover:text-white transition-all cursor-pointer"
+            >
+              💀 Roast
+            </button>
+          </div>
+
+          <!-- Commentary Box -->
+          <div class="rounded-2xl bg-black/60 border border-white/10 p-5">
+            <div id="lb-mode-badge" class="font-mono text-[10px] text-gold tracking-widest uppercase mb-2">
+              BROTHERHOOD HYPE NOTE
+            </div>
+            <p id="lb-commentary" class="text-zinc-200 text-sm sm:text-base leading-relaxed">
+              Commentary text.
+            </p>
+          </div>
+        </div>
+
+        <div class="pt-5 mt-6 border-t border-white/10 flex items-center justify-between">
+          <button
+            type="button"
+            onclick="triggerSingleSwap(lightboxIndex)"
+            class="btn-gold-outline rounded-xl px-4 py-2 font-mono text-xs cursor-pointer"
+          >
+            📸 Swap This Photo
+          </button>
+          <span class="font-mono text-[10px] text-zinc-500">← / → KEYS</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       JAVASCRIPT ENGINE: PHOTO ARCHIVE, WHATSAPP EXPORT, GAMES, AUDIO & FX
+       ========================================================================== -->
+  <script>
+    /* Capture pristine HTML source immediately for clean standalone WhatsApp export */
+    const PRISTINE_DOCUMENT_HTML = '<!DOCTYPE html>\n' + document.documentElement.outerHTML;
+
+    /* ==========================================================================
+       1. EXACT 9 UPLOADED PHOTOS METADATA (HYPE + ROAST + CUSTOM SVG FALLBACKS)
+       ========================================================================== */
+    const EVIDENCE_PHOTOS = [
+      {
+        index: 0,
+        code: '01',
+        roman: 'I',
+        filename: 'WhatsApp Image 2026-11-13 at 12.02.45 AM.jpeg',
+        matchTokens: ['12.02.45 AM.'],
+        title: 'The Cryptid Sighting',
+        sceneBadge: 'BLURRY HILL SPRINT // WHITE SHIRT',
+        category: 'candid',
+        hype: 'Captured mid-motion out in the wild—always moving forward, never standing still, bringing chaotic main-character energy to every outdoor trip.',
+        roast: '100% motion blur, 0% explanation—looks like Bigfoot escaped into the hills wearing a fresh white formal shirt.',
+        svgMotif: 'sprint'
+      },
+      {
+        index: 1,
+        code: '02',
+        roman: 'II',
+        filename: 'WhatsApp Image 2026-11-13 at 12.02.45 AM (1).jpeg',
+        matchTokens: ['12.02.45 AM (1)'],
+        title: 'Main Character on the Ghat Road',
+        sceneBadge: 'HILL ROAD PEACE SIGN // ICONIC',
+        category: 'iconic',
+        hype: 'Crisp white shirt, glasses gleaming, peace sign locked in with the hills behind you—effortless composure that turns a simple roadside stop into an iconic cover shot.',
+        roast: 'Bike parked behind, glasses gleaming, peace sign locked like he’s about to drop a big-budget action movie trailer.',
+        svgMotif: 'peace'
+      },
+      {
+        index: 2,
+        code: '03',
+        roman: 'III',
+        filename: 'WhatsApp Image 2026-11-13 at 12.04.52 AM.jpeg',
+        matchTokens: ['12.04.52'],
+        title: 'Monochrome Album Cover',
+        sceneBadge: 'B&W NOIR // RED SNAP OVERLAY',
+        category: 'moody',
+        hype: 'Pure timeless contrast—no filters needed to show sharp character and effortless style. Looks straight off a platinum indie record sleeve.',
+        roast: 'No glasses, ceiling fan spinning, dramatic black-and-white filter—Bro thinks he’s starring in a 1960s detective thriller.',
+        svgMotif: 'noir'
+      },
+      {
+        index: 3,
+        code: '04',
+        roman: 'IV',
+        filename: 'WhatsApp Image 2026-11-13 at 12.04.53 AM.jpeg',
+        matchTokens: ['12.04.53'],
+        title: '2 PM Deep Philosopher',
+        sceneBadge: 'WINDOW GRILLE // CRESCENT MOONS',
+        category: 'moody',
+        hype: 'Golden afternoon light through the window lattice—the exact look of someone quietly planning ten steps ahead while everyone else is still waking up.',
+        roast: 'Crescent moon filter on the cheek, staring through the window grille contemplating life’s biggest mysteries because the Wi-Fi dropped one bar.',
+        svgMotif: 'moon'
+      },
+      {
+        index: 4,
+        code: '05',
+        roman: 'V',
+        filename: 'WhatsApp Image 2026-11-13 at 12.02.38 AM.jpeg',
+        matchTokens: ['12.02.38'],
+        title: 'Hostage at the Family Function',
+        sceneBadge: 'BORED IN FAMILY GATHERINGS',
+        category: 'candid',
+        hype: 'Even trapped in a four-hour family function, one snap from you is enough to make us laugh until our stomachs hurt.',
+        roast: 'The legendary "Getting bored in a family gatherings" face—mentally calculating the exact second he can eat and escape.',
+        svgMotif: 'bored'
+      },
+      {
+        index: 5,
+        code: '06',
+        roman: 'VI',
+        filename: 'WhatsApp Image 2026-11-13 at 12.02.40 AM.jpeg',
+        matchTokens: ['12.02.40'],
+        title: '3 AM Nocturnal HQ',
+        sceneBadge: 'MIDNIGHT LAPTOP // SPOTIFY',
+        category: 'moody',
+        hype: 'Late-night playlists, glowing backlit keys, and quiet hours where the best ideas and deepest late-night conversations happen.',
+        roast: 'Pitch black room, glowing keyboard, Spotify running—peak overthinking and skipping 45 songs in a row at 3 AM.',
+        svgMotif: 'laptop'
+      },
+      {
+        index: 6,
+        code: '07',
+        roman: 'VII',
+        filename: 'WhatsApp Image 2026-11-13 at 12.02.42 AM.jpeg',
+        matchTokens: ['12.02.42'],
+        title: 'CEO of Ignoring Everyone',
+        sceneBadge: 'BLUE SWEATER // LASER FOCUS',
+        category: 'iconic',
+        hype: 'Clean blue knit over a white collar, locked in with laser focus—bringing calm, composed energy wherever we pull up.',
+        roast: 'Locked into that screen at the canteen table like he’s closing a multi-million dollar merger instead of replying "k" in the group chat.',
+        svgMotif: 'focus'
+      },
+      {
+        index: 7,
+        code: '08',
+        roman: 'VIII',
+        filename: 'WhatsApp Image 2026-11-13 at 12.02.44 AM.jpeg',
+        matchTokens: ['12.02.44 AM.'],
+        title: 'No Paparazzi Please',
+        sceneBadge: 'CAMERA DODGE // HAND-UP',
+        category: 'candid',
+        hype: 'Unscripted hangout moments like this are what real brotherhood is built on—zero staging, pure genuine laughs.',
+        roast: 'His bro throwing a peace sign right next to him while he pulls the classic hand-over-face celebrity dodge.',
+        svgMotif: 'dodge'
+      },
+      {
+        index: 8,
+        code: '09',
+        roman: 'IX',
+        filename: 'WhatsApp Image 2026-11-13 at 12.02.44 AM (1).jpeg',
+        matchTokens: ['12.02.44 AM (1)'],
+        title: 'Tea-Time Mastermind',
+        sceneBadge: 'CAFE TABLE // RED THERMOS',
+        category: 'iconic',
+        hype: 'Some of our best plans and realest conversations happen over simple cafe tables like this. Here’s to a hundred more.',
+        roast: 'Sitting cool against the marble wall with the iconic red-top thermos flask stealing 40% of the spotlight.',
+        svgMotif: 'cafe'
+      }
+    ];
+
+    /* Runtime State */
+    const photoSources = EVIDENCE_PHOTOS.map(p => p.filename);
+    const photoBakedDataUrls = {}; // Maps index -> dataURL when loaded/baked
+    const photoLoadedStatus = new Array(9).fill(false);
+    const cardModes = new Array(9).fill('hype'); // 'hype' | 'roast'
+    let heroFeaturedIndex = 1; // Default to Photo #2 (Hill Road Peace Sign)
+    let lightboxIndex = 0;
+    let lightboxMode = 'hype';
+    let currentFilter = 'all';
+
+    /* ==========================================================================
+       2. CUSTOM LUXURY GOLD-FRAMED "VIP ARCHIVAL PLATE" SVG PLACEHOLDER
+       ========================================================================== */
+    function buildLuxuryArchivalPlateHTML(item, compact = false) {
+      const motifs = {
+        sprint: `<path d="M22 54 L44 36 L58 46 L78 24" fill="none" stroke="#E5B94C" stroke-width="2" stroke-linecap="round"/><circle cx="78" cy="24" r="4" fill="#F7D774"/>`,
+        peace: `<path d="M44 62 V32 M56 62 V32 M38 62 H62 V74 H38 Z" fill="none" stroke="#E5B94C" stroke-width="2" stroke-linecap="round"/>`,
+        noir: `<circle cx="50" cy="48" r="22" fill="none" stroke="#E5B94C" stroke-width="1.8"/><path d="M50 26 A22 22 0 0 1 50 70 Z" fill="rgba(229,185,76,0.28)"/>`,
+        moon: `<path d="M58 28 A22 22 0 1 0 72 62 A18 18 0 1 1 58 28 Z" fill="none" stroke="#E5B94C" stroke-width="2"/>`,
+        bored: `<rect x="28" y="34" width="44" height="30" rx="6" fill="none" stroke="#E5B94C" stroke-width="1.8"/><line x1="38" y1="48" x2="62" y2="48" stroke="#F7D774" stroke-width="2"/>`,
+        laptop: `<rect x="30" y="30" width="40" height="26" rx="3" fill="none" stroke="#E5B94C" stroke-width="1.8"/><path d="M22 60 H78 L72 66 H28 Z" fill="rgba(229,185,76,0.35)"/>`,
+        focus: `<circle cx="50" cy="48" r="20" fill="none" stroke="#E5B94C" stroke-width="1.6" stroke-dasharray="4 3"/><circle cx="50" cy="48" r="6" fill="#F7D774"/>`,
+        dodge: `<path d="M36 64 V42 M44 64 V34 M52 64 V32 M60 64 V36 M68 64 V44" fill="none" stroke="#E5B94C" stroke-width="2" stroke-linecap="round"/>`,
+        cafe: `<rect x="38" y="34" width="24" height="34" rx="4" fill="none" stroke="#E5B94C" stroke-width="1.8"/><rect x="36" y="28" width="28" height="7" rx="2" fill="#E11D48"/>`
+      };
+
+      return `
+        <div class="w-full h-full bg-gradient-to-b from-zinc-900 via-obsidian to-zinc-950 flex flex-col items-center justify-between p-4 sm:p-5 text-center select-none relative overflow-hidden">
+          <div class="w-full flex items-center justify-between font-mono text-[10px] text-gold/80">
+            <span>PLATE ${item.roman}</span>
+            <span>NOV · 16</span>
+          </div>
+
+          <div class="my-auto flex flex-col items-center">
+            <div class="w-20 h-20 rounded-2xl border border-gold/40 bg-gold/5 flex items-center justify-center mb-3 shadow-inner">
+              <svg viewBox="0 0 100 96" class="w-14 h-14">
+                ${motifs[item.svgMotif] || motifs.peace}
+              </svg>
+            </div>
+            <span class="font-mono text-[9px] tracking-[0.2em] text-gold uppercase px-2.5 py-0.5 rounded-full bg-gold/10 border border-gold/25 mb-2">
+              VIP ARCHIVAL PLATE
+            </span>
+            <p class="font-serif font-bold text-base sm:text-lg text-white leading-tight px-2">
+              ${item.title}
+            </p>
+            ${!compact ? `
+              <button
+                type="button"
+                onclick="event.stopPropagation(); triggerSingleSwap(${item.index});"
+                class="mt-3 px-3.5 py-1.5 rounded-lg bg-gold/15 hover:bg-gold/25 border border-gold/40 font-mono text-[10px] text-gold-light cursor-pointer transition-colors"
+              >
+                📸 Click to Load Photo #${item.code}
+              </button>
+            ` : ''}
+          </div>
+
+          <div class="w-full font-mono text-[9px] text-zinc-500 truncate">
+            ${item.sceneBadge}
+          </div>
+        </div>
+      `;
+    }
+
+    /* ==========================================================================
+       3. INDEXEDDB PERSISTENT PHOTO STORAGE + SMART AUTO-MATCHING
+       ========================================================================== */
+    const DB_NAME = 'Nov16_VIP_Brotherhood_DB';
+    const STORE_NAME = 'evidence_photos';
+
+    function openPhotoDB() {
+      return new Promise((resolve, reject) => {
+        try {
+          const req = indexedDB.open(DB_NAME, 1);
+          req.onupgradeneeded = (e) => {
+            const db = e.target.result;
+            if (!db.objectStoreNames.contains(STORE_NAME)) {
+              db.createObjectStore(STORE_NAME);
+            }
+          };
+          req.onsuccess = () => resolve(req.result);
+          req.onerror = () => reject(req.error);
+        } catch (err) {
+          reject(err);
+        }
+      });
+    }
+
+    async function persistPhotoInDB(index, dataUrl) {
+      photoBakedDataUrls[index] = dataUrl;
+      photoSources[index] = dataUrl;
+      photoLoadedStatus[index] = true;
+      try {
+        const db = await openPhotoDB();
+        const tx = db.transaction(STORE_NAME, 'readwrite');
+        tx.objectStore(STORE_NAME).put(dataUrl, `photo_${index}`);
+      } catch (e) {}
+    }
+
+    async function hydrateSavedPhotos() {
+      // 1. Hydrate from Baked State first (for exported WhatsApp HTML files!)
+      if (window.__BAKED_STATE__ && window.__BAKED_STATE__.photos) {
+        Object.entries(window.__BAKED_STATE__.photos).forEach(([idxStr, dataUrl]) => {
+          const idx = Number(idxStr);
+          if (dataUrl && idx >= 0 && idx < 9) {
+            photoBakedDataUrls[idx] = dataUrl;
+            photoSources[idx] = dataUrl;
+            photoLoadedStatus[idx] = true;
+          }
+        });
+      }
+
+      // 2. Hydrate any newer local uploads from IndexedDB
+      try {
+        const db = await openPhotoDB();
+        await new Promise((resolve) => {
+          const tx = db.transaction(STORE_NAME, 'readonly');
+          const store = tx.objectStore(STORE_NAME);
+          let remaining = 9;
+          for (let i = 0; i < 9; i++) {
+            const req = store.get(`photo_${i}`);
+            req.onsuccess = () => {
+              if (req.result) {
+                photoBakedDataUrls[i] = req.result;
+                photoSources[i] = req.result;
+                photoLoadedStatus[i] = true;
+              }
+              remaining--;
+              if (remaining === 0) resolve();
+            };
+            req.onerror = () => {
+              remaining--;
+              if (remaining === 0) resolve();
+            };
+          }
+        });
+      } catch (e) {}
+    }
+
+    function fileToDataURL(file) {
+      return new Promise((resolve, reject) => {
+        const reader = new FileReader();
+        reader.onload = () => resolve(reader.result);
+        reader.onerror = () => reject(reader.error);
+        reader.readAsDataURL(file);
+      });
+    }
+
+    /* Exact Substring Auto-Matcher:
+       Prioritizes `12.02.45 AM (1)` before `12.02.45 AM` and `12.02.44 AM (1)` before `12.02.44 AM` */
+    const PRIORITY_MATCH_RULES = [
+      { substring: '12.02.45 AM (1)', targetIndex: 1 },
+      { substring: '12.02.45 AM',     targetIndex: 0 },
+      { substring: '12.02.44 AM (1)', targetIndex: 8 },
+      { substring: '12.02.44 AM',     targetIndex: 7 },
+      { substring: '12.04.52',        targetIndex: 2 },
+      { substring: '12.04.53',        targetIndex: 3 },
+      { substring: '12.02.38',        targetIndex: 4 },
+      { substring: '12.02.40',        targetIndex: 5 },
+      { substring: '12.02.42',        targetIndex: 6 }
+    ];
+
+    async function processUploadedBatch(fileList) {
+      const files = Array.from(fileList).filter(f => f.type.startsWith('image/'));
+      if (!files.length) return;
+
+      const usedSlots = new Set();
+      const unmatched = [];
+
+      // Pass 1: Exact substring match
+      for (const file of files) {
+        const rule = PRIORITY_MATCH_RULES.find(
+          r => !usedSlots.has(r.targetIndex) && file.name.includes(r.substring)
+        );
+        if (rule) {
+          const dataUrl = await fileToDataURL(file);
+          await persistPhotoInDB(rule.targetIndex, dataUrl);
+          usedSlots.add(rule.targetIndex);
+        } else {
+          unmatched.push(file);
+        }
+      }
+
+      // Pass 2: Sequential fallback for renamed files
+      let nextSlot = 0;
+      for (const file of unmatched) {
+        while (nextSlot < 9 && usedSlots.has(nextSlot)) {
+          nextSlot++;
+        }
+        if (nextSlot >= 9) break;
+        const dataUrl = await fileToDataURL(file);
+        await persistPhotoInDB(nextSlot, dataUrl);
+        usedSlots.add(nextSlot);
+        nextSlot++;
+      }
+
+      syncAllPhotoViews();
+      sfx.playChime();
+      launchConfetti(55);
+      showToast(`📸 Matched & locked ${usedSlots.size} photo(s) into the VIP Vault!`);
+    }
+
+    function triggerBatchUpload() {
+      document.getElementById('batch-upload-input').click();
+    }
+
+    let pendingSingleSwapIndex = 0;
+    function triggerSingleSwap(idx) {
+      pendingSingleSwapIndex = idx;
+      document.getElementById('single-swap-input').click();
+    }
+
+    document.getElementById('batch-upload-input').addEventListener('change', async (e) => {
+      if (e.target.files && e.target.files.length) {
+        await processUploadedBatch(e.target.files);
+        e.target.value = '';
+      }
+    });
+
+    document.getElementById('single-swap-input').addEventListener('change', async (e) => {
+      const file = e.target.files && e.target.files[0];
+      if (!file) return;
+      const dataUrl = await fileToDataURL(file);
+      await persistPhotoInDB(pendingSingleSwapIndex, dataUrl);
+      syncAllPhotoViews();
+      if (!document.getElementById('vip-lightbox').classList.contains('hidden')) {
+        renderLightbox();
+      }
+      sfx.playChime();
+      showToast(`✨ Updated Photo #0${pendingSingleSwapIndex + 1}!`);
+      e.target.value = '';
+    });
+
+    // Full-page Drag-and-Drop support
+    let dragDepth = 0;
+    window.addEventListener('dragenter', (e) => {
+      e.preventDefault();
+      dragDepth++;
+      document.body.classList.add('file-dragging');
+    });
+    window.addEventListener('dragleave', (e) => {
+      e.preventDefault();
+      dragDepth--;
+      if (dragDepth <= 0) {
+        dragDepth = 0;
+        document.body.classList.remove('file-dragging');
+      }
+    });
+    window.addEventListener('dragover', (e) => e.preventDefault());
+    window.addEventListener('drop', async (e) => {
+      e.preventDefault();
+      dragDepth = 0;
+      document.body.classList.remove('file-dragging');
+      if (e.dataTransfer && e.dataTransfer.files && e.dataTransfer.files.length) {
+        await processUploadedBatch(e.dataTransfer.files);
+      }
+    });
+
+    function updatePhotoCounters() {
+      const count = photoLoadedStatus.filter(Boolean).length;
+      document.querySelectorAll('.photos-counter-badge').forEach(el => {
+        el.textContent = `${count}/9`;
+      });
+    }
+
+    /* ==========================================================================
+       4. HERO SPOTLIGHT & 9-CARD EVIDENCE VAULT RENDERING
+       ========================================================================== */
+    function renderHeroSpotlight(idx = heroFeaturedIndex) {
+      heroFeaturedIndex = idx;
+      const item = EVIDENCE_PHOTOS[idx];
+      const img = document.getElementById('hero-featured-img');
+      const fallback = document.getElementById('hero-featured-fallback');
+
+      document.getElementById('hero-plate-tag').textContent = `SPOTLIGHT // #${item.code}`;
+      document.getElementById('hero-featured-title').textContent = item.title;
+      document.getElementById('hero-featured-sub').textContent = item.sceneBadge;
+
+      img.classList.remove('hidden');
+      fallback.classList.add('hidden');
+
+      img.onload = () => {
+        photoLoadedStatus[idx] = true;
+        updatePhotoCounters();
+      };
+      img.onerror = () => {
+        img.classList.add('hidden');
+        fallback.innerHTML = buildLuxuryArchivalPlateHTML(item, false);
+        fallback.classList.remove('hidden');
+        updatePhotoCounters();
+      };
+      img.src = photoSources[idx];
+
+      // Render selector pills #1 to #9
+      const pillsWrap = document.getElementById('hero-selector-pills');
+      pillsWrap.innerHTML = '';
+      EVIDENCE_PHOTOS.forEach((p, i) => {
+        const btn = document.createElement('button');
+        btn.type = 'button';
+        btn.textContent = `#${i + 1}`;
+        btn.className = i === idx
+          ? 'py-1.5 rounded-lg bg-gold text-obsidian font-mono text-[10px] font-bold cursor-pointer'
+          : 'py-1.5 rounded-lg bg-black/60 border border-white/10 hover:border-gold/50 text-zinc-400 hover:text-white font-mono text-[10px] cursor-pointer';
+        btn.addEventListener('click', () => {
+          renderHeroSpotlight(i);
+          sfx.playTick();
+        });
+        pillsWrap.appendChild(btn);
+      });
+    }
+
+    function renderEvidenceVault(filter = currentFilter) {
+      currentFilter = filter;
+      const grid = document.getElementById('evidence-grid');
+      grid.innerHTML = '';
+
+      EVIDENCE_PHOTOS.forEach((item) => {
+        if (filter !== 'all' && item.category !== filter) return;
+
+        const mode = cardModes[item.index];
+        const card = document.createElement('article');
+        card.className = 'rounded-3xl luxury-glass luxury-glass-hover p-4 sm:p-5 flex flex-col justify-between border border-gold/25 group';
+
+        card.innerHTML = `
+          <div>
+            <!-- Top Plate Metadata & Quick Swap -->
+            <div class="flex items-center justify-between gap-2 mb-3">
+              <span class="font-mono text-xs text-gold font-bold">EVIDENCE #${item.code}</span>
+              <button
+                type="button"
+                class="swap-card-btn font-mono text-[10px] px-2.5 py-1 rounded-lg bg-black/60 border border-white/10 hover:border-gold text-zinc-300 hover:text-gold transition-colors cursor-pointer"
+              >
+                📸 Swap
+              </button>
+            </div>
+
+            <!-- Photo Frame (Click opens Fullscreen Lightbox) -->
+            <div class="photo-open-trigger relative aspect-[4/5] w-full rounded-2xl overflow-hidden bg-zinc-950 border border-white/10 mb-4 cursor-pointer">
+              <img
+                src="${photoSources[item.index]}"
+                alt="${item.title}"
+                class="vault-card-img w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+              />
+              <div class="vault-card-fallback hidden absolute inset-0"></div>
+
+              <!-- Scene Pill Overlay -->
+              <div class="absolute top-3 left-3 px-2.5 py-1 rounded-lg bg-obsidian/80 backdrop-blur-md border border-gold/25 font-mono text-[9px] text-zinc-200">
+                ${item.sceneBadge}
+              </div>
+            </div>
+
+            <!-- Title -->
+            <h3 class="font-serif text-xl sm:text-2xl font-bold text-white mb-3">
+              ${item.title}
+            </h3>
+
+            <!-- On-Card Hype vs Roast Segmented Toggle -->
+            <div class="grid grid-cols-2 rounded-xl bg-black/75 p-1 border border-white/10 mb-3">
+              <button
+                type="button"
+                class="toggle-hype-btn py-1.5 rounded-lg font-mono text-xs font-bold transition-all cursor-pointer ${mode === 'hype' ? 'bg-gold text-obsidian' : 'text-zinc-400 hover:text-white'}"
+              >
+                🔥 Hype
+              </button>
+              <button
+                type="button"
+                class="toggle-roast-btn py-1.5 rounded-lg font-mono text-xs font-bold transition-all cursor-pointer ${mode === 'roast' ? 'bg-rose-600 text-white' : 'text-zinc-400 hover:text-white'}"
+              >
+                💀 Roast
+              </button>
+            </div>
+
+            <!-- Dynamic Commentary Text -->
+            <p class="card-note-text text-sm leading-relaxed rounded-xl p-3.5 border ${mode === 'hype' ? 'bg-gold/5 border-gold/20 text-zinc-200' : 'bg-rose-950/25 border-rose-500/30 text-rose-100'}">
+              ${mode === 'hype' ? item.hype : item.roast}
+            </p>
+          </div>
+
+          <div class="mt-4 pt-3 border-t border-white/10 flex items-center justify-between">
+            <span class="font-mono text-[10px] text-zinc-500">PLATE ${item.roman} // NOV 16</span>
+            <button type="button" class="photo-open-trigger font-mono text-[11px] text-gold hover:underline cursor-pointer">
+              Full View ↗
+            </button>
+          </div>
+        `;
+
+        const imgEl = card.querySelector('.vault-card-img');
+        const fallbackEl = card.querySelector('.vault-card-fallback');
+
+        imgEl.onload = () => {
+          photoLoadedStatus[item.index] = true;
+          updatePhotoCounters();
+        };
+        imgEl.onerror = () => {
+          imgEl.classList.add('hidden');
+          fallbackEl.innerHTML = buildLuxuryArchivalPlateHTML(item, false);
+          fallbackEl.classList.remove('hidden');
+          updatePhotoCounters();
+        };
+
+        card.querySelector('.swap-card-btn').addEventListener('click', (e) => {
+          e.stopPropagation();
+          triggerSingleSwap(item.index);
+        });
+
+        card.querySelectorAll('.photo-open-trigger').forEach(el => {
+          el.addEventListener('click', () => openLightbox(item.index));
+        });
+
+        const hypeBtn = card.querySelector('.toggle-hype-btn');
+        const roastBtn = card.querySelector('.toggle-roast-btn');
+        const noteEl = card.querySelector('.card-note-text');
+
+        hypeBtn.addEventListener('click', () => {
+          cardModes[item.index] = 'hype';
+          hypeBtn.className = 'toggle-hype-btn py-1.5 rounded-lg font-mono text-xs font-bold transition-all cursor-pointer bg-gold text-obsidian';
+          roastBtn.className = 'toggle-roast-btn py-1.5 rounded-lg font-mono text-xs font-bold transition-all cursor-pointer text-zinc-400 hover:text-white';
+          noteEl.className = 'card-note-text text-sm leading-relaxed rounded-xl p-3.5 border bg-gold/5 border-gold/20 text-zinc-200';
+          noteEl.textContent = item.hype;
+          sfx.playTick();
+        });
+
+        roastBtn.addEventListener('click', () => {
+          cardModes[item.index] = 'roast';
+          roastBtn.className = 'toggle-roast-btn py-1.5 rounded-lg font-mono text-xs font-bold transition-all cursor-pointer bg-rose-600 text-white';
+          hypeBtn.className = 'toggle-hype-btn py-1.5 rounded-lg font-mono text-xs font-bold transition-all cursor-pointer text-zinc-400 hover:text-white';
+          noteEl.className = 'card-note-text text-sm leading-relaxed rounded-xl p-3.5 border bg-rose-950/25 border-rose-500/30 text-rose-100';
+          noteEl.textContent = item.roast;
+          sfx.playTick();
+        });
+
+        grid.appendChild(card);
+      });
+    }
+
+    function syncAllPhotoViews() {
+      renderHeroSpotlight(heroFeaturedIndex);
+      renderEvidenceVault(currentFilter);
+      updatePhotoCounters();
+    }
+
+    // Category Filter Pill Listeners
+    document.querySelectorAll('.gallery-filter-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.gallery-filter-btn').forEach(b => {
+          b.classList.remove('active', 'btn-gold-primary');
+          b.classList.add('btn-gold-outline');
+        });
+        btn.classList.add('active', 'btn-gold-primary');
+        btn.classList.remove('btn-gold-outline');
+        renderEvidenceVault(btn.dataset.filter);
+        sfx.playTick();
+      });
+    });
+
+    /* ==========================================================================
+       5. FULL-SCREEN VIP LIGHTBOX MODAL
+       ========================================================================== */
+    const lightboxModal = document.getElementById('vip-lightbox');
+
+    function renderLightbox() {
+      const item = EVIDENCE_PHOTOS[lightboxIndex];
+      const lbImg = document.getElementById('lb-img');
+      const lbFallback = document.getElementById('lb-fallback');
+
+      lbImg.classList.remove('hidden');
+      lbFallback.classList.add('hidden');
+      lbImg.onerror = () => {
+        lbImg.classList.add('hidden');
+        lbFallback.innerHTML = buildLuxuryArchivalPlateHTML(item, false);
+        lbFallback.classList.remove('hidden');
+      };
+      lbImg.src = photoSources[lightboxIndex];
+
+      document.getElementById('lb-plate-code').textContent = `EVIDENCE #${item.code} OF 09`;
+      document.getElementById('lb-title').textContent = item.title;
+      document.getElementById('lb-scene-tag').textContent = item.sceneBadge;
+
+      const hypeTab = document.getElementById('lb-hype-tab');
+      const roastTab = document.getElementById('lb-roast-tab');
+      const badge = document.getElementById('lb-mode-badge');
+      const body = document.getElementById('lb-commentary');
+
+      if (lightboxMode === 'hype') {
+        hypeTab.className = 'py-2.5 rounded-lg font-mono text-xs font-bold bg-gold text-obsidian transition-all cursor-pointer';
+        roastTab.className = 'py-2.5 rounded-lg font-mono text-xs font-bold text-zinc-400 hover:text-white transition-all cursor-pointer';
+        badge.textContent = '🔥 BROTHERHOOD HYPE NOTE';
+        badge.className = 'font-mono text-[10px] text-gold tracking-widest uppercase mb-2';
+        body.textContent = item.hype;
+      } else {
+        roastTab.className = 'py-2.5 rounded-lg font-mono text-xs font-bold bg-rose-600 text-white transition-all cursor-pointer';
+        hypeTab.className = 'py-2.5 rounded-lg font-mono text-xs font-bold text-zinc-400 hover:text-white transition-all cursor-pointer';
+        badge.textContent = '💀 OFFICIAL ROAST DISPATCH';
+        badge.className = 'font-mono text-[10px] text-rose-400 tracking-widest uppercase mb-2';
+        body.textContent = item.roast;
+      }
+    }
+
+    function openLightbox(idx) {
+      lightboxIndex = (idx + 9) % 9;
+      lightboxMode = cardModes[lightboxIndex] || 'hype';
+      renderLightbox();
+      lightboxModal.classList.remove('hidden');
+      lightboxModal.classList.add('flex');
+      document.body.style.overflow = 'hidden';
+      sfx.playTick();
+    }
+
+    function closeLightbox() {
+      lightboxModal.classList.add('hidden');
+      lightboxModal.classList.remove('flex');
+      document.body.style.overflow = '';
+    }
+
+    document.getElementById('lb-hype-tab').addEventListener('click', () => {
+      lightboxMode = 'hype';
+      renderLightbox();
+      sfx.playTick();
+    });
+    document.getElementById('lb-roast-tab').addEventListener('click', () => {
+      lightboxMode = 'roast';
+      renderLightbox();
+      sfx.playTick();
+    });
+    document.getElementById('lb-prev-btn').addEventListener('click', () => {
+      lightboxIndex = (lightboxIndex + 8) % 9;
+      renderLightbox();
+      sfx.playTick();
+    });
+    document.getElementById('lb-next-btn').addEventListener('click', () => {
+      lightboxIndex = (lightboxIndex + 1) % 9;
+      renderLightbox();
+      sfx.playTick();
+    });
+    document.getElementById('close-lightbox-btn').addEventListener('click', closeLightbox);
+    lightboxModal.addEventListener('click', (e) => {
+      if (e.target === lightboxModal) closeLightbox();
+    });
+    document.addEventListener('keydown', (e) => {
+      if (lightboxModal.classList.contains('hidden')) return;
+      if (e.key === 'Escape') closeLightbox();
+      if (e.key === 'ArrowLeft') document.getElementById('lb-prev-btn').click();
+      if (e.key === 'ArrowRight') document.getElementById('lb-next-btn').click();
+    });
+
+    /* ==========================================================================
+       6. BRO CLUB GAME 1: SPIN YOUR NOV 16 BIRTHDAY PERK (ROULETTE WHEEL)
+       ========================================================================== */
+    const ROULETTE_PERKS = [
+      { short: 'Biryani / Treat', full: '🍛 Unlimited Biryani / Feast Treat on Me!' },
+      { short: 'Escape Pass', full: '🏃 1 Free Escape Pass from Any Family Gathering!' },
+      { short: 'Roast Shield', full: '🛡️ 24-Hour Roast Immunity Shield (Use Wisely)!' },
+      { short: 'Drive & Chai', full: '🏍️ Late-Night Drive & Chai Voucher (Any Hour)!' },
+      { short: 'Wingman Pass', full: '🤝 Official Wingman for Life — Zero Questions Asked!' },
+      { short: 'Main Character', full: '👑 Official Main Character Crown for All of Nov 16!' }
+    ];
+
+    const wheelCanvas = document.getElementById('roulette-canvas');
+    const wCtx = wheelCanvas.getContext('2d');
+    let currentWheelAngle = 0;
+    let isWheelSpinning = false;
+
+    function drawRouletteWheel(angleOffset = 0) {
+      const size = wheelCanvas.width;
+      const cx = size / 2;
+      const cy = size / 2;
+      const radius = cx - 6;
+      const sliceAngle = (Math.PI * 2) / ROULETTE_PERKS.length;
+
+      wCtx.clearRect(0, 0, size, size);
+
+      ROULETTE_PERKS.forEach((perk, i) => {
+        const start = angleOffset + i * sliceAngle;
+        const end = start + sliceAngle;
+
+        wCtx.beginPath();
+        wCtx.moveTo(cx, cy);
+        wCtx.arc(cx, cy, radius, start, end);
+        wCtx.closePath();
+
+        // Alternating Obsidian & Brushed Gold slices
+        wCtx.fillStyle = i % 2 === 0 ? '#141418' : '#241D11';
+        wCtx.fill();
+        wCtx.lineWidth = 1.5;
+        wCtx.strokeStyle = 'rgba(229, 185, 76, 0.55)';
+        wCtx.stroke();
+
+        // Slice Label
+        wCtx.save();
+        wCtx.translate(cx, cy);
+        wCtx.rotate(start + sliceAngle / 2);
+        wCtx.textAlign = 'right';
+        wCtx.fillStyle = i % 2 === 0 ? '#F7D774' : '#FFFFFF';
+        wCtx.font = 'bold 12px "Plus Jakarta Sans", sans-serif';
+        wCtx.fillText(perk.short, radius - 18, 4);
+        wCtx.restore();
+      });
+    }
+
+    drawRouletteWheel(0);
+
+    document.getElementById('spin-wheel-btn').addEventListener('click', () => {
+      if (isWheelSpinning) return;
+      isWheelSpinning = true;
+
+      const extraSpins = 5 + Math.random() * 4;
+      const targetAngle = currentWheelAngle + extraSpins * Math.PI * 2;
+      const startAngle = currentWheelAngle;
+      const duration = 3600;
+      const startTime = performance.now();
+      let lastTickSlice = -1;
+
+      function animateWheel(now) {
+        const elapsed = now - startTime;
+        const progress = Math.min(elapsed / duration, 1);
+        // Cubic ease-out
+        const ease = 1 - Math.pow(1 - progress, 3);
+        currentWheelAngle = startAngle + (targetAngle - startAngle) * ease;
+        drawRouletteWheel(currentWheelAngle);
+
+        const sliceSize = (Math.PI * 2) / ROULETTE_PERKS.length;
+        const currentSlice = Math.floor(((currentWheelAngle % (Math.PI * 2)) + Math.PI * 2) / sliceSize);
+        if (currentSlice !== lastTickSlice) {
+          lastTickSlice = currentSlice;
+          sfx.playTick();
+        }
+
+        if (progress < 1) {
+          requestAnimationFrame(animateWheel);
+        } else {
+          isWheelSpinning = false;
+          // Top pointer is at -PI/2 (270 deg)
+          const normalized = ((-Math.PI / 2 - currentWheelAngle) % (Math.PI * 2) + Math.PI * 2) % (Math.PI * 2);
+          const winningIndex = Math.floor(normalized / sliceSize) % ROULETTE_PERKS.length;
+          const won = ROULETTE_PERKS[winningIndex];
+
+          document.getElementById('roulette-prize-text').textContent = won.full;
+          sfx.playFanfare();
+          launchConfetti(70);
+          showToast(`🎰 VOUCHER UNLOCKED: ${won.short}!`);
+        }
+      }
+
+      requestAnimationFrame(animateWheel);
+    });
+
+    /* ==========================================================================
+       7. BRO CLUB GAME 2: THE BROTHERHOOD VIBE CHECK (3-QUESTION MINI-QUIZ)
+       ========================================================================== */
+    const VIBE_QUIZ = [
+      {
+        q: '1. What is his exact survival strategy at a family gathering?',
+        options: [
+          'Enthusiastically networking with every distant uncle',
+          'Taking a deadpan selfie captioned "Getting bored in a family gatherings" & plotting an escape',
+          'Volunteering to serve extra sweets to everyone'
+        ],
+        correct: 1,
+        roastReply: 'Correct! Evidence #05 proves his soul leaves his body within 12 minutes of any family function.'
+      },
+      {
+        q: '2. What happens the exact millisecond a camera points at him mid-hangout?',
+        options: [
+          'Strikes a full Bollywood red-carpet pose',
+          'Throws his hand over his face like paparazzi just caught him outside a private jet',
+          'Asks for studio lighting first'
+        ],
+        correct: 1,
+        roastReply: 'Spot on! Evidence #08 captures the legendary hand-up celebrity dodge in HD.'
+      },
+      {
+        q: '3. What time does the Spotify + dark laptop keyboard mode activate?',
+        options: [
+          '7:30 AM sharp after morning yoga',
+          '2:00 PM during lunch break',
+          '3:00 AM in pitch darkness while skipping 40 songs and overthinking life'
+        ],
+        correct: 2,
+        roastReply: '3/3 Certified! Evidence #06 confirms peak nocturnal HQ hours.'
+      }
+    ];
+
+    let quizStep = 0;
+    let quizScore = 0;
+    let quizAnswered = false;
+
+    function renderQuizStep() {
+      const qObj = VIBE_QUIZ[quizStep];
+      quizAnswered = false;
+
+      document.getElementById('quiz-progress-pill').textContent = `QUESTION ${quizStep + 1} / ${VIBE_QUIZ.length}`;
+      document.getElementById('quiz-question-text').textContent = qObj.q;
+      document.getElementById('quiz-score-label').textContent = `SCORE: ${quizScore} / ${VIBE_QUIZ.length}`;
+
+      const feedback = document.getElementById('quiz-feedback-banner');
+      feedback.classList.add('hidden');
+      document.getElementById('quiz-next-btn').classList.add('hidden');
+      document.getElementById('quiz-restart-btn').classList.add('hidden');
+
+      const optsList = document.getElementById('quiz-options-list');
+      optsList.innerHTML = '';
+
+      qObj.options.forEach((optText, idx) => {
+        const btn = document.createElement('button');
+        btn.type = 'button';
+        btn.className = 'w-full text-left p-3.5 rounded-xl bg-black/55 hover:bg-gold/10 border border-white/10 hover:border-gold/45 text-xs sm:text-sm text-zinc-200 transition-all cursor-pointer';
+        btn.textContent = optText;
+
+        btn.addEventListener('click', () => {
+          if (quizAnswered) return;
+          quizAnswered = true;
+
+          const isCorrect = idx === qObj.correct;
+          if (isCorrect) {
+            quizScore++;
+            btn.className = 'w-full text-left p-3.5 rounded-xl bg-emerald-950/60 border border-emerald-400 text-xs sm:text-sm text-emerald-100 font-semibold';
+            feedback.className = 'rounded-xl p-3.5 text-xs sm:text-sm border bg-emerald-950/40 border-emerald-500/40 text-emerald-200';
+            feedback.textContent = `✅ ${qObj.roastReply}`;
+            sfx.playChime();
+          } else {
+            btn.className = 'w-full text-left p-3.5 rounded-xl bg-rose-950/60 border border-rose-500 text-xs sm:text-sm text-rose-100';
+            optsList.children[qObj.correct].className = 'w-full text-left p-3.5 rounded-xl bg-emerald-950/50 border border-emerald-400/70 text-xs sm:text-sm text-emerald-100 font-semibold';
+            feedback.className = 'rounded-xl p-3.5 text-xs sm:text-sm border bg-rose-950/40 border-rose-500/40 text-rose-200';
+            feedback.textContent = `💀 Bro do you even know him?! ${qObj.roastReply}`;
+            sfx.playTick();
+          }
+
+          feedback.classList.remove('hidden');
+          document.getElementById('quiz-score-label').textContent = `SCORE: ${quizScore} / ${VIBE_QUIZ.length}`;
+
+          if (quizStep < VIBE_QUIZ.length - 1) {
+            document.getElementById('quiz-next-btn').classList.remove('hidden');
+          } else {
+            feedback.textContent += ` — FINAL RANK: ${quizScore === 3 ? '🏆 CERTIFIED DAY-ONE BROTHER' : '🔥 OFFICIAL SQUAD MEMBER'}`;
+            document.getElementById('quiz-restart-btn').classList.remove('hidden');
+            if (quizScore >= 2) launchConfetti(50);
+          }
+        });
+
+        optsList.appendChild(btn);
+      });
+    }
+
+    renderQuizStep();
+
+    document.getElementById('quiz-next-btn').addEventListener('click', () => {
+      quizStep++;
+      renderQuizStep();
+    });
+    document.getElementById('quiz-restart-btn').addEventListener('click', () => {
+      quizStep = 0;
+      quizScore = 0;
+      renderQuizStep();
+    });
+
+    /* ==========================================================================
+       8. BRO CLUB GAME 3: MIDNIGHT NOV 16 CAKE RITUAL + MIC BLOW DETECTION
+       ========================================================================== */
+    let candlesExtinguished = false;
+    let activeMicStream = null;
+    let listeningToMic = false;
+
+    function blowOutBirthdayCandles() {
+      if (candlesExtinguished) return;
+      candlesExtinguished = true;
+      stopMicListening();
+
+      document.querySelectorAll('.cake-flame').forEach(f => f.classList.add('out'));
+      document.querySelectorAll('.smoke-trail').forEach(s => {
+        s.classList.remove('active');
+        void s.offsetWidth;
+        s.classList.add('active');
+      });
+
+      document.getElementById('cake-status-msg').textContent = '🎉 WISH LOCKED IN! LAUNCHING FIREWORKS & UNSEALING YOUR LETTER...';
+      document.getElementById('blow-candles-btn').classList.add('hidden');
+      document.getElementById('mic-candles-btn').classList.add('hidden');
+      document.getElementById('relight-candles-btn').classList.remove('hidden');
+
+      sfx.playFanfare();
+      launchCelebrationBurst();
+
+      setTimeout(() => {
+        unsealBrotherhoodLetter();
+        document.getElementById('brotherhood-letter').scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }, 1500);
+    }
+
+    function relightBirthdayCandles() {
+      candlesExtinguished = false;
+      document.querySelectorAll('.cake-flame').forEach(f => f.classList.remove('out'));
+      document.querySelectorAll('.smoke-trail').forEach(s => s.classList.remove('active'));
+      document.getElementById('cake-status-msg').textContent = 'CANDLES LIT // MAKE YOUR NOVEMBER 16 WISH';
+      document.getElementById('blow-candles-btn').classList.remove('hidden');
+      document.getElementById('mic-candles-btn').classList.remove('hidden');
+      document.getElementById('relight-candles-btn').classList.add('hidden');
+      sfx.playTick();
+    }
+
+    function stopMicListening() {
+      listeningToMic = false;
+      if (activeMicStream) {
+        activeMicStream.getTracks().forEach(t => t.stop());
+        activeMicStream = null;
+      }
+    }
+
+    async function startMicCandleBlow() {
+      if (candlesExtinguished || listeningToMic) return;
+      try {
+        if (!navigator.mediaDevices || !navigator.mediaDevices.getUserMedia) {
+          blowOutBirthdayCandles();
+          return;
+        }
+        activeMicStream = await navigator.mediaDevices.getUserMedia({ audio: true });
+        const AudioCtx = window.AudioContext || window.webkitAudioContext;
+        const ctx = new AudioCtx();
+        const src = ctx.createMediaStreamSource(activeMicStream);
+        const analyser = ctx.createAnalyser();
+        analyser.fftSize = 256;
+        src.connect(analyser);
+
+        const data = new Uint8Array(analyser.frequencyBinCount);
+        listeningToMic = true;
+        document.getElementById('cake-status-msg').textContent = '🎙️ LISTENING... BLOW INTO YOUR MICROPHONE NOW!';
+
+        const checkAudio = () => {
+          if (!listeningToMic || candlesExtinguished) return;
+          analyser.getByteFrequencyData(data);
+          let lowSum = 0;
+          for (let i = 0; i < 16; i++) lowSum += data[i];
+          if (lowSum / 16 > 140) {
+            blowOutBirthdayCandles();
+            return;
+          }
+          requestAnimationFrame(checkAudio);
+        };
+        checkAudio();
+      } catch (err) {
+        blowOutBirthdayCandles();
+      }
+    }
+
+    document.getElementById('blow-candles-btn').addEventListener('click', blowOutBirthdayCandles);
+    document.getElementById('mic-candles-btn').addEventListener('click', startMicCandleBlow);
+    document.getElementById('relight-candles-btn').addEventListener('click', relightBirthdayCandles);
+
+    /* ==========================================================================
+       9. EMOTIONAL BROTHERHOOD LETTER (UNSEAL + INLINE CUSTOMIZER)
+       ========================================================================== */
+    let isEditingLetter = false;
+
+    function unsealBrotherhoodLetter() {
+      const sealBox = document.getElementById('letter-wax-seal-box');
+      const drawer = document.getElementById('letter-body-drawer');
+      if (drawer.classList.contains('unsealed')) return;
+      sealBox.classList.add('hidden');
+      drawer.classList.add('unsealed');
+      sfx.playChime();
+    }
+
+    document.getElementById('unseal-letter-btn').addEventListener('click', () => {
+      unsealBrotherhoodLetter();
+      launchConfetti(65);
+    });
+
+    document.getElementById('toggle-edit-letter-btn').addEventListener('click', () => {
+      unsealBrotherhoodLetter();
+      isEditingLetter = !isEditingLetter;
+      const bodyEl = document.getElementById('editable-letter-content');
+      const signEl = document.getElementById('editable-sender-sign');
+      const labelEl = document.getElementById('edit-letter-label');
+
+      if (isEditingLetter) {
+        bodyEl.contentEditable = 'true';
+        signEl.contentEditable = 'true';
+        bodyEl.classList.add('ring-2', 'ring-gold', 'p-4', 'bg-white/70');
+        signEl.classList.add('ring-2', 'ring-gold', 'bg-white/70');
+        labelEl.textContent = 'Save Letter';
+        bodyEl.focus();
+        showToast('✍️ Edit mode active — click any paragraph to customize!');
+      } else {
+        bodyEl.contentEditable = 'false';
+        signEl.contentEditable = 'false';
+        bodyEl.classList.remove('ring-2', 'ring-gold', 'p-4', 'bg-white/70');
+        signEl.classList.remove('ring-2', 'ring-gold', 'bg-white/70');
+        labelEl.textContent = 'Customize Letter';
+        try {
+          localStorage.setItem('nov16_custom_letter_html', bodyEl.innerHTML);
+          localStorage.setItem('nov16_custom_sender_sign', signEl.textContent.trim());
+        } catch (e) {}
+        sfx.playChime();
+        showToast('✅ Letter changes saved! Ready for WhatsApp export.');
+      }
+    });
+
+    /* ==========================================================================
+       10. FRIEND NAME PERSONALIZATION & COUNTDOWN CLOCK TO NOVEMBER 16
+       ========================================================================== */
+    let currentFriendName = 'BROTHER';
+
+    function applyFriendName(raw) {
+      const cleaned = (raw || '').trim().toUpperCase() || 'BROTHER';
+      currentFriendName = cleaned;
+      document.querySelectorAll('.friend-name-display').forEach(el => {
+        el.textContent = cleaned;
+      });
+      document.getElementById('vault-name-input').value = cleaned === 'BROTHER' ? '' : cleaned;
+      document.getElementById('top-name-input').value = cleaned === 'BROTHER' ? '' : cleaned;
+      try {
+        localStorage.setItem('nov16_friend_name', cleaned);
+      } catch (e) {}
+    }
+
+    document.getElementById('vault-name-input').addEventListener('input', (e) => {
+      applyFriendName(e.target.value);
+    });
+
+    document.getElementById('top-edit-name-btn').addEventListener('click', () => {
+      const drawer = document.getElementById('inline-name-drawer');
+      drawer.classList.toggle('hidden');
+      if (!drawer.classList.contains('hidden')) {
+        document.getElementById('top-name-input').focus();
+      }
+    });
+    document.getElementById('save-top-name-btn').addEventListener('click', () => {
+      applyFriendName(document.getElementById('top-name-input').value);
+      document.getElementById('inline-name-drawer').classList.add('hidden');
+      sfx.playChime();
+      showToast(`✨ Updated name to ${currentFriendName}`);
+    });
+    document.getElementById('close-top-name-btn').addEventListener('click', () => {
+      document.getElementById('inline-name-drawer').classList.add('hidden');
+    });
+
+    function updateNov16Countdown() {
+      const now = new Date();
+      const m = now.getMonth(); // November = 10
+      const d = now.getDate();
+
+      const countdownBox = document.getElementById('vault-countdown-box');
+      const liveBanner = document.getElementById('vault-live-banner');
+
+      if (m === 10 && d === 16) {
+        countdownBox.classList.add('hidden');
+        liveBanner.classList.remove('hidden');
+        return;
+      }
+
+      let targetYear = now.getFullYear();
+      if (m > 10 || (m === 10 && d > 16)) {
+        targetYear += 1;
+      }
+      const target = new Date(targetYear, 10, 16, 0, 0, 0);
+      const diff = Math.max(0, target - now);
+
+      document.getElementById('v-days').textContent = String(Math.floor(diff / 86400000)).padStart(2, '0');
+      document.getElementById('v-hours').textContent = String(Math.floor((diff / 3600000) % 24)).padStart(2, '0');
+      document.getElementById('v-mins').textContent = String(Math.floor((diff / 60000) % 60)).padStart(2, '0');
+      document.getElementById('v-secs').textContent = String(Math.floor((diff / 1000) % 60)).padStart(2, '0');
+    }
+
+    updateNov16Countdown();
+    setInterval(updateNov16Countdown, 1000);
+
+    /* ==========================================================================
+       11. STANDALONE WHATSAPP EXPORT ENGINE ("PHOTOS BAKED IN")
+       ========================================================================== */
+    function exportReadyToSendHTML() {
+      const bakedCount = Object.keys(photoBakedDataUrls).length;
+      const payload = {
+        friendName: currentFriendName,
+        letterHtml: document.getElementById('editable-letter-content').innerHTML,
+        senderSign: document.getElementById('editable-sender-sign').textContent.trim(),
+        photos: photoBakedDataUrls
+      };
+
+      const serializedPayload = JSON.stringify(payload).replace(/<\/script>/gi, '<\\/script>');
+      const standaloneHtml = PRISTINE_DOCUMENT_HTML.replace(
+        '/*__BAKED_PAYLOAD__*/null',
+        serializedPayload
+      );
+
+      const blob = new Blob([standaloneHtml], { type: 'text/html;charset=utf-8' });
+      const url = URL.createObjectURL(blob);
+      const link = document.createElement('a');
+      const safeName = currentFriendName.replace(/[^a-zA-Z0-9_-]/g, '_') || 'Brother';
+      link.href = url;
+      link.download = `Happy_Birthday_${safeName}_Nov16.html`;
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+      setTimeout(() => URL.revokeObjectURL(url), 5000);
+
+      sfx.playFanfare();
+      launchConfetti(60);
+      showToast(
+        bakedCount > 0
+          ? `📦 Downloaded with ${bakedCount}/9 photos baked in! Send this file directly on WhatsApp.`
+          : `📦 Downloaded! Tip: Load your 9 photos first if you want them embedded inside the file.`
+      );
+    }
+
+    document.getElementById('export-whatsapp-btn').addEventListener('click', exportReadyToSendHTML);
+
+    /* ==========================================================================
+       12. WEB AUDIO SYNTH SOUND EFFECTS & CANVAS CONFETTI / FIREWORKS
+       ========================================================================== */
+    class VipSynthAudio {
+      constructor() {
+        this.ctx = null;
+        this.muted = false;
+      }
+      init() {
+        if (!this.ctx) {
+          const AC = window.AudioContext || window.webkitAudioContext;
+          if (AC) this.ctx = new AC();
+        }
+        if (this.ctx && this.ctx.state === 'suspended') {
+          this.ctx.resume();
+        }
+      }
+      tone(freq, dur = 0.25, vol = 0.05, delay = 0, type = 'triangle') {
+        if (this.muted) return;
+        try {
+          this.init();
+          if (!this.ctx) return;
+          const now = this.ctx.currentTime + delay;
+          const osc = this.ctx.createOscillator();
+          const gain = this.ctx.createGain();
+          osc.type = type;
+          osc.frequency.setValueAtTime(freq, now);
+          gain.gain.setValueAtTime(0.0001, now);
+          gain.gain.exponentialRampToValueAtTime(vol, now + 0.02);
+          gain.gain.exponentialRampToValueAtTime(0.0001, now + dur);
+          osc.connect(gain);
+          gain.connect(this.ctx.destination);
+          osc.start(now);
+          osc.stop(now + dur + 0.03);
+        } catch (e) {}
+      }
+      playTick() {
+        this.tone(720, 0.08, 0.03, 0, 'sine');
+      }
+      playChime() {
+        this.tone(587.33, 0.45, 0.05, 0, 'triangle');
+        this.tone(880.00, 0.65, 0.05, 0.09, 'triangle');
+      }
+      playFanfare() {
+        const notes = [523.25, 659.25, 783.99, 1046.50];
+        notes.forEach((n, i) => this.tone(n, 0.85, 0.055, i * 0.09, 'triangle'));
+      }
+    }
+
+    const sfx = new VipSynthAudio();
+
+    document.getElementById('top-sound-btn').addEventListener('click', (e) => {
+      sfx.muted = !sfx.muted;
+      e.currentTarget.textContent = sfx.muted ? '🔇' : '🔊';
+      if (!sfx.muted) sfx.playTick();
+    });
+
+    /* Unlock VIP Vault Overlay Button */
+    document.getElementById('unlock-vault-btn').addEventListener('click', () => {
+      sfx.init();
+      sfx.playFanfare();
+      document.getElementById('vip-vault-overlay').classList.add('unlocked');
+      launchCelebrationBurst();
+    });
+
+    document.getElementById('top-celebrate-btn').addEventListener('click', () => {
+      sfx.playFanfare();
+      launchCelebrationBurst();
+    });
+
+    /* Hero 3D Pointer Tilt */
+    const heroTiltStage = document.getElementById('hero-tilt-stage');
+    const heroTiltCard = document.getElementById('hero-tilt-card');
+    if (heroTiltStage && heroTiltCard) {
+      heroTiltStage.addEventListener('mousemove', (e) => {
+        const r = heroTiltStage.getBoundingClientRect();
+        const x = (e.clientX - r.left) / r.width - 0.5;
+        const y = (e.clientY - r.top) / r.height - 0.5;
+        heroTiltCard.style.transform = `rotateY(${x * 9}deg) rotateX(${-y * 9}deg)`;
+      });
+      heroTiltStage.addEventListener('mouseleave', () => {
+        heroTiltCard.style.transform = 'rotateY(0deg) rotateX(0deg)';
+      });
+    }
+
+    /* Custom Toast Notification Helper (Zero alert() usage) */
+    function showToast(message) {
+      const container = document.getElementById('toast-container');
+      const toast = document.createElement('div');
+      toast.className = 'pointer-events-auto rounded-2xl bg-charcoal/95 backdrop-blur-xl border border-gold/50 px-4 py-3 text-xs sm:text-sm text-white shadow-2xl transition-all duration-300';
+      toast.textContent = message;
+      container.appendChild(toast);
+      setTimeout(() => {
+        toast.style.opacity = '0';
+        toast.style.transform = 'translateY(8px)';
+        setTimeout(() => toast.remove(), 300);
+      }, 3800);
+    }
+
+    /* ==========================================================================
+       13. AMBIENT GOLD DUST, CONFETTI & FIREWORKS PARTICLE ENGINE
+       ========================================================================== */
+    const fxCanvas = document.getElementById('fx-canvas');
+    const fCtx = fxCanvas.getContext('2d');
+    let fw = fxCanvas.width = window.innerWidth;
+    let fh = fxCanvas.height = window.innerHeight;
+
+    window.addEventListener('resize', () => {
+      fw = fxCanvas.width = window.innerWidth;
+      fh = fxCanvas.height = window.innerHeight;
+    });
+
+    const ambientDust = Array.from({ length: 48 }, () => ({
+      x: Math.random() * fw,
+      y: Math.random() * fh,
+      r: Math.random() * 1.5 + 0.5,
+      vx: (Math.random() - 0.5) * 0.25,
+      vy: -(Math.random() * 0.3 + 0.08),
+      a: Math.random() * 0.5 + 0.15
+    }));
+
+    let particles = [];
+
+    function launchConfetti(count = 70) {
+      const palette = ['#E5B94C', '#F7D774', '#F8F4EC', '#E11D48', '#F59E0B'];
+      for (let i = 0; i < count; i++) {
+        particles.push({
+          x: fw * (0.2 + Math.random() * 0.6),
+          y: fh * 0.35,
+          vx: (Math.random() - 0.5) * 11,
+          vy: (Math.random() - 0.85) * 11,
+          w: Math.random() * 7 + 4,
+          h: Math.random() * 4 + 3,
+          rot: Math.random() * Math.PI * 2,
+          vRot: (Math.random() - 0.5) * 0.25,
+          color: palette[Math.floor(Math.random() * palette.length)],
+          life: 1,
+          decay: 0.011 + Math.random() * 0.008,
+          isSpark: false
+        });
+      }
+    }
+
+    function launchFireworkBurst(bx, by) {
+      const palette = ['#F7D774', '#E5B94C', '#FFFFFF', '#FB7185'];
+      const color = palette[Math.floor(Math.random() * palette.length)];
+      for (let i = 0; i < 48; i++) {
+        const angle = (Math.PI * 2 * i) / 48;
+        const speed = 2 + Math.random() * 5.5;
+        particles.push({
+          x: bx,
+          y: by,
+          vx: Math.cos(angle) * speed,
+          vy: Math.sin(angle) * speed,
+          w: 2.6,
+          h: 2.6,
+          rot: 0,
+          vRot: 0,
+          color,
+          life: 1,
+          decay: 0.014 + Math.random() * 0.008,
+          isSpark: true
+        });
+      }
+    }
+
+    function launchCelebrationBurst() {
+      launchConfetti(80);
+      launchFireworkBurst(fw * 0.28, fh * 0.28);
+      setTimeout(() => launchFireworkBurst(fw * 0.72, fh * 0.24), 260);
+      setTimeout(() => launchFireworkBurst(fw * 0.5, fh * 0.2), 520);
+    }
+
+    function renderParticlesLoop() {
+      fCtx.clearRect(0, 0, fw, fh);
+
+      // Subtle floating champagne gold dust
+      ambientDust.forEach(d => {
+        d.x += d.vx;
+        d.y += d.vy;
+        if (d.y < -10) d.y = fh + 10;
+        if (d.x < -10) d.x = fw + 10;
+        if (d.x > fw + 10) d.x = -10;
+
+        fCtx.beginPath();
+        fCtx.arc(d.x, d.y, d.r, 0, Math.PI * 2);
+        fCtx.fillStyle = `rgba(229, 185, 76, ${d.a})`;
+        fCtx.fill();
+      });
+
+      // Confetti & Fireworks
+      for (let i = particles.length - 1; i >= 0; i--) {
+        const p = particles[i];
+        p.x += p.vx;
+        p.y += p.vy;
+        p.vy += p.isSpark ? 0.06 : 0.16;
+        p.vx *= 0.985;
+        p.rot += p.vRot;
+        p.life -= p.decay;
+
+        if (p.life <= 0) {
+          particles.splice(i, 1);
+          continue;
+        }
+
+        fCtx.save();
+        fCtx.globalAlpha = p.life;
+        fCtx.translate(p.x, p.y);
+        fCtx.rotate(p.rot);
+        fCtx.fillStyle = p.color;
+        if (p.isSpark) {
+          fCtx.beginPath();
+          fCtx.arc(0, 0, p.w, 0, Math.PI * 2);
+          fCtx.fill();
+        } else {
+          fCtx.fillRect(-p.w / 2, -p.h / 2, p.w, p.h);
+        }
+        fCtx.restore();
+      }
+
+      requestAnimationFrame(renderParticlesLoop);
+    }
+
+    /* ==========================================================================
+       14. BOOTSTRAP ON WINDOW LOAD
+       ========================================================================== */
+    window.addEventListener('load', async () => {
+      // Restore friend name & custom letter from baked payload or localStorage
+      if (window.__BAKED_STATE__) {
+        if (window.__BAKED_STATE__.friendName) {
+          applyFriendName(window.__BAKED_STATE__.friendName);
+        }
+        if (window.__BAKED_STATE__.letterHtml) {
+          document.getElementById('editable-letter-content').innerHTML = window.__BAKED_STATE__.letterHtml;
+        }
+        if (window.__BAKED_STATE__.senderSign) {
+          document.getElementById('editable-sender-sign').textContent = window.__BAKED_STATE__.senderSign;
+        }
+      } else {
+        try {
+          const savedName = localStorage.getItem('nov16_friend_name');
+          if (savedName) applyFriendName(savedName);
+          const savedLetter = localStorage.getItem('nov16_custom_letter_html');
+          if (savedLetter) document.getElementById('editable-letter-content').innerHTML = savedLetter;
+          const savedSign = localStorage.getItem('nov16_custom_sender_sign');
+          if (savedSign) document.getElementById('editable-sender-sign').textContent = savedSign;
+        } catch (e) {}
+      }
+
+      await hydrateSavedPhotos();
+      syncAllPhotoViews();
+      renderParticlesLoop();
+    });
+  </script>
+</body>
+</html>
